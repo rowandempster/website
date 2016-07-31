@@ -1,0 +1,8 @@
+read a 1 2 3 end
+addone a
+print a
+map a sqr
+print a
+build b 5
+map b neg
+print b

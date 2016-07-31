@@ -1,0 +1,5 @@
+build z 5
+print z
+filter z even
+print z
+foldl z add 0

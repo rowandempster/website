@@ -1,0 +1,15 @@
+empty?
+push Banana
+top
+push Apple
+top
+push Pear
+top
+empty?
+pop
+top
+pop 
+top
+pop
+empty?
+quit

@@ -1,0 +1,38 @@
+c
+p
+d
+c
+a 40 1
+a 40 1
+a 40 1
+r
+r
+r
+l
+a 40 1
+fi
+fp
+r
+a 5 5
+a 4 4
+fp
+fi
+a 3 3
+a 2 2
+a 1 1
+p
+kws 5
+c
+a 5 5
+a 4 4
+a 3 3
+a 2 2
+a 1 1
+kws 2
+c
+a 5 5
+a 4 4
+a 3 3
+a 2 2
+a 1 1
+ta

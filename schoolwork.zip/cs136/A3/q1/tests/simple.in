@@ -1,0 +1,9 @@
+empty?
+push apple
+push banana
+top
+pop
+top
+reset
+empty?
+quit

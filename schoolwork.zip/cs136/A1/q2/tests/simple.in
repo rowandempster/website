@@ -1,0 +1,15 @@
+empty?
+add apple
+empty?
+front
+add banana
+add cherry
+front
+remove
+front
+remove
+front
+empty?
+reset
+empty?
+quit

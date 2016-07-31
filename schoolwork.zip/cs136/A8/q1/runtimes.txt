@@ -1,0 +1,33 @@
+
+// INTEGRITY STATEMENT (modify if necessary)
+// I received help from the following sources:
+// None. I am the sole author of this work 
+
+// sign this statement by removing the line below and entering your name
+
+// Name: Rowan Dempster
+// login ID: R2DEMPST
+
+// implementation:
+ 
+a) O(1), O(logn), O(n), O(nlogn), O(n^3), O(2^n), O(4^n)
+b) Let n be strlen(str)
+   For loop runs n times => runtime = O(n)
+   Final Answer: O(n)
+c) Runtime of each recursive call: O(1)
+   Size of recursive input = T(n/2) + T(n/2) = 2T(n/2)
+   Using Table: O(1) + 2T(n/2) = O(n)
+   Final Answer: O(n)
+d) Let n = strlen(str2)
+   Rumtime of inner loop = O(n)
+   Let m = strlen(str1)
+   Runtime of outer loop = Sum(0, m, O(n) + O(n)) = O(n^2)
+                                      ^     ^
+                                      |     |
+                                    Inner  Print
+                                    Loop   String
+   Final Answer: O(n^2)
+e) Inner loop runs n times => O(n)
+   Outler Loop counter changes geometrically, i*=4
+   So outer loop = Sum(0, log(n), O(n)) = O(n*log(n))
+   Final Answer: O(n*log(n))

@@ -1,0 +1,8 @@
+read a 1 2 3 end
+addsum a
+print a
+avgvar a
+fib b 8
+print b
+collatz c 6
+print c

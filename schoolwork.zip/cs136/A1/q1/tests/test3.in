@@ -1,0 +1,11 @@
+push Grapes
+top
+push Apricot
+top
+pop
+top
+push Orange
+top
+pop
+top
+quit

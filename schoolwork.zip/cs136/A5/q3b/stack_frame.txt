@@ -1,0 +1,65 @@
+// INTEGRITY STATEMENT (modify if necessary)
+// I received help from the following sources:
+// None. I am the sole author of this work 
+
+// sign this statement by removing the line below and entering your name
+
+// Name: Rowan Dempster
+// login ID: R2DEMPST
+
+Write your answer to A5Q3b here:
+
+**********Point A********************
+=========================
+foo:
+  p1: addr_2
+  p2: addr_2
+  return address: main: 22
+=========================
+main:
+  x: 10 [addr_1]
+  y: 35 [addr_2]
+  p1 [addr_3]:
+    .x: ???
+    .y: ???
+  p2 [addr_4]:
+    .x: ???
+    .y: ???
+  return address: OS
+=========================
+
+*********Point B********************
+
+=========================
+swap:
+  p1: addr_3
+  p2: addr_4 
+  return address: main: 25
+=========================
+main:
+  x: 10 [addr_1]
+  y: 35 [addr_2]:
+  p1 [addr_3]:
+    .x: 21
+    .y: 24
+  p2 [addr_4]:
+    .x: 21
+    .y: 24
+  return address: OS
+=========================
+
+************Point C*******************
+
+=========================
+main:
+  x: 10 [addr_1]
+  y: 35 [addr_2]:
+  p1 [addr_3]:
+    .x: 21
+    .y: 24
+  p2 [addr_4]:
+    .x: 21
+    .y: 24
+  return address: OS
+=========================
+

@@ -1,0 +1,4 @@
+build z 5
+print z
+reverse z
+print z

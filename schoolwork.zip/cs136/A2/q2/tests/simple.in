@@ -1,0 +1,8 @@
+polyeval 3 5 7 2
+selector 1 2 3
+max3 3 2 1
+sumsqr1 4
+sumsqr2 4
+sumsqr3 4
+sameparity 2 4
+quit

@@ -1,0 +1,16 @@
+empty?
+add apple 10
+empty?
+top
+add banana 5
+top
+add cherry 15
+top
+remove
+top
+remove
+top
+empty?
+reset
+empty?
+quit

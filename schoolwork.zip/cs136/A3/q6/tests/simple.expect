@@ -1,0 +1,11 @@
+balance: $0.00
+balance: $100.00
+limit: $1000.00
+balance: -$900.00
+limit: $0.00
+no withdrawal: daily limit exceeded
+balance: -$900.00
+Warning! Overdraft
+balance: -$905.00
+balance: $95.00
+limit: $1000.00

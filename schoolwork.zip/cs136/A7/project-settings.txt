@@ -1,0 +1,1 @@
+#hasheq((bonus-runner . "radix.c") (q1-runner . "test-seq.c") (q2-runner . "lexi.c") (q3-runner . "test-str.c") (q4-runner . "test-gene.c") (q5-runner . "test-gene.c"))

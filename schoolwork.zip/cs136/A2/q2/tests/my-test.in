@@ -1,0 +1,17 @@
+polyeval 5 6 7 2
+selector 1 2 3
+selector 0 2 3
+max3 4 1 -5
+max3 -5 4 1
+max3 1 -5 4
+sumsqr1 1
+sumsqr2 1
+sumsqr3 1
+sameparity 3 1
+sameparity 4 5
+sameparity 142343 9
+sameparity 234234232344234922 92038293404
+sumsqr3 5
+sumsqr3 6
+sumsqr3 7
+sumsqr3 8

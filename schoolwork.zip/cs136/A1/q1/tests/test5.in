@@ -1,0 +1,38 @@
+push Blueberry
+top
+push Strawberry
+top
+pop
+top
+reset
+empty?
+push Berry
+top
+push Goldberry
+top
+push Mysteryberry
+top
+pop
+top
+pop
+top
+push Miracleberry
+top
+push Mintberry
+top
+pop
+pop
+top
+push Burntberry
+top
+push Iceberry
+top
+push Bitterberry
+top
+reset
+empty?
+push Raspberry
+top
+reset
+empty?
+quit

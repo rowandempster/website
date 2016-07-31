@@ -1,0 +1,14 @@
+empty?
+push Pomegranate
+top
+push Kumquat
+top
+reset
+empty?
+push Watermelon
+top
+push Cantaloupe
+top
+reset
+empty?
+quit

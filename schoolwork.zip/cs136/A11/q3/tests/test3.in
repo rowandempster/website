@@ -1,0 +1,4 @@
+(define a 1)
+(define b (+ 1 a))
+(define c (/ (+ a b) 3))
+c

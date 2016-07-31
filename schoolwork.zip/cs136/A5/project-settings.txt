@@ -1,0 +1,1 @@
+#hasheq((q1-runner . "test-bp.c") (q2black-runner . "test-pfb.c") (q2gold-runner . "pointer_fun_gold.c") (q3a-runner . "puzzle.c") (q4-runner . "test-student.c") (q5-runner . "test-seqtools.c"))
