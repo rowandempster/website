@@ -1,5 +1,5 @@
 a:visited {color:white; background-color:red; text-decoration:none}
-body.home {background-image:url(pictures/custom.jpg); text-align:center}
+body.home {background-image:url(pictures/animated_background.gif); text-align:center; background-size: cover;}
 h1,h3 {color:#660033}
 h1 {font-size:50px}
 h3 {font-size:30px}
