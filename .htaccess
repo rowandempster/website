@@ -1,4 +1,4 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RedirectMatch 301 ^/color http://www.google.com/?
+RedirectMatch 301 ^/color/$ http://www.google.com/?
