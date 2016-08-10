@@ -14,8 +14,6 @@ var Content = React.createClass({
 				<p2>About Me!</p2>
 				<p>My name is Rowan, and I program </p>
 
-				<a href="google.com" key={1} style={styles.link}>Home</a>
-
 				<hr></hr>
 
 				<footer>

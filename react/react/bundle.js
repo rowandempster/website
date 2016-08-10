@@ -4309,11 +4309,6 @@
 					null,
 					'My name is Rowan, and I program '
 				),
-				_react2.default.createElement(
-					'a',
-					{ href: 'google.com', key: 1, style: styles.link },
-					'Home'
-				),
 				_react2.default.createElement('hr', null),
 				_react2.default.createElement(
 					'footer',
