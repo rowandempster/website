@@ -1,39 +1,50 @@
 import React from 'react';
 var Radium = require('radium');
 import HeaderNavDropDownButton from "./HeaderNavDropDown";
+var myModule = require('../data/headerData');
+var headerArray = myModule.headerArray;
 
-var projectsData = {
-		buttonTitle: "My Work", 
-		dropDownItems: [
-			{
-				item:"Side Projects",
-				link:"www.google.com"
-			},
-			{
-				item:"Work Projects",
-				link:"www.github.com"
 
-			}
 
-	]
-};
 
 var HeaderNav = React.createClass({
+	getInitialState: function(){
+console.log(myModule);
+
+		return {
+			showingDropDownId:-1
+		}
+	},
+	componentWillReceiveProps: function(nextProps) {
+	  this.setState({
+	    showingDropDownId:-1
+	  });
+	},
+	showAndCloseOthers: function(idToShow){
+		if(idToShow == this.state.showingDropDownId){
+			this.setState({
+				showingDropDownId: -1
+			});
+		}
+		else{
+			this.setState({
+				showingDropDownId: idToShow
+			});
+		}
+	},
 
 	render:function(){
-
+		var headerViewArray = [];
+		for(var i=0; i<headerArray.length; i++){
+			 var viewToPush = (<li style={styles.listItem} onClick={this.showAndCloseOthers.bind(this, (headerArray[i]).id)} key={(headerArray[i]).id}>
+	  					<HeaderNavDropDownButton data={(headerArray[i])} key={(headerArray[i]).id} idToShow={this.state.showingDropDownId}/>
+  						</li>);
+			 headerViewArray.push(viewToPush);
+		}
 		return (
 			<div style={styles.headerContainer}>
 				<ul style={styles.list}>
-  					{/*<li style={styles.listItem}><a key={1} style={styles.link}>Home</a></li>*/}
-  					{/* <li style={styles.listItem}><a  href="http://www.github.com/rowandempster" key={2}style={styles.link}>GitHub</a></li>*/}
-  					<li style={styles.listItem}><HeaderNavDropDownButton data={projectsData} key={3}/></li>
-  					{/* <li style={styles.listItem}><a key={4}style={styles.link}>Side Projects</a></li>*/}
-  					{/* <li style={styles.listItem}><a key={5}style={styles.link}>School Work</a></li>*/}
-  					 {/* <li style={styles.listItem}><a key={6}style={styles.link}>Hackathons</a></li>*/}
-  					 {/* <li style={styles.listItem}><a key={7}style={styles.link}>Tech Blog</a></li>*/}
-
-
+					{headerViewArray}
 				</ul>
 			</div>
 				

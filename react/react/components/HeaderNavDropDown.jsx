@@ -1,36 +1,38 @@
 import React from 'react';
 var Radium = require('radium');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var HeaderNavDropDownButton = React.createClass({
 	getInitialState: function(){
 		return {
-			showingItems: false,
-			style: styles.dropDownContainerGone
-		}
+				showingItems: false
+			}
 	},
-
-	toggleShowItems: function(){
-		if(!(this.state.showingItems)){
-			this.setState({
-				showingItems: true,
-				style: styles.dropDownContainerShow
-			});
-		}
-		else {
-			this.setState({
-				showingItems: false,
-				style: styles.dropDownContainerGone
-			});
-		}
+	componentWillReceiveProps: function(nextProps) {
+	  this.setState({
+	    showingItems: (nextProps.idToShow == nextProps.data.id)
+	  });
 	},
 
 	render: function(){
-		return (
-			<div style={styles.dropDownButton} onClick={this.toggleShowItems}>
-				{this.props.data.buttonTitle}
-				<HeaderNavDropDownContianer style={this.state.style} data={this.props.data.dropDownItems}/>
-			</div>
-		);
+		if(this.state.showingItems){
+			return (
+				<div style={styles.dropDownButton} onClick={this.toggleShowItems}>
+					{this.props.data.buttonTitle}
+					<HeaderNavDropDownContianer style={styles.dropDownContainerShow} data={this.props.data.dropDownItems}/>
+				</div>
+			);
+		}
+		else {
+			return (
+				<div style={styles.dropDownButton} onClick={this.toggleShowItems}>
+					{this.props.data.buttonTitle}
+					<HeaderNavDropDownContianer style={styles.dropDownContainerGone} data={this.props.data.dropDownItems}/>
+				</div>
+			);
+		}
+
 	}
 });
 
@@ -39,12 +41,15 @@ var HeaderNavDropDownContianer = React.createClass({
 
 	render: function(){
 		var menuArray = this.props.data;
-		console.log("settings conainer style to: " + this.props.style);
+		var dropDownItemArray = [];
+		for(var i=0; i<menuArray.length; i++){
+			dropDownItemArray.push(<DropDownItem item={menuArray[i].item} link={menuArray[i].link} 
+													key={menuArray[i].id} route={menuArray[i].route}/>);
+		}
 
 		return (
 			  <div style={this.props.style}>
-			    <DropDownItem item={menuArray[0].item} link={menuArray[0].link}/>
-			    <DropDownItem item={menuArray[1].item} link={menuArray[1].link}/>
+					{dropDownItemArray}
 			  </div>
 			);
 	}
@@ -54,10 +59,17 @@ var DropDownItem = React.createClass({
 	render: function(){
 		var item = this.props.item;
 		var link = this.props.link;
-
-		return(
+		var route = this.props.route;
+		if(route){
+			return(
+					<Link style={styles.dropDownItem} to={link}>{item}</Link>
+				);
+		}
+		else{
+			return(
 				<a style={styles.dropDownItem} href={link}>{item}</a>
 			);
+		}
 	}
 })
 

@@ -4,16 +4,17 @@ import HeaderNav from './HeaderNav';
 var Radium = require('radium');
 
 var App = React.createClass({
+	clearNav: function(){
+		console.log("content clicked");
+		this.forceUpdate();
+		},
 	render: function(){
 		return (
 			<div>
-			<div>
-			<HeaderNav/>
-			</div>
-			<br/>
-
-
-			<Content/>
+				<HeaderNav/>
+				<div onClick={this.clearNav}>
+					<Content/>
+				</div>
 			</div>
 			);
 	}

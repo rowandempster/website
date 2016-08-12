@@ -46,17 +46,6 @@ var styles = {
 	h1 : {
 		color:"#660033",
 		fontSize:"50px",
-		    ':hover': {
-      backgroundColor: 'red'
-    },
-
-    ':focus': {
-      backgroundColor: 'green'
-    },
-
-    ':active': {
-      backgroundColor: 'yellow'
-    }
 	}
 
   
