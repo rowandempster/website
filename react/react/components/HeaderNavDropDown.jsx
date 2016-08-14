@@ -2,6 +2,8 @@ import React from 'react';
 var Radium = require('radium');
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
+import Button from 'react-bootstrap/lib/Button';
+import Collapse from 'react-bootstrap/lib/Collapse';
 
 var HeaderNavDropDownButton = React.createClass({
 	getInitialState: function(){

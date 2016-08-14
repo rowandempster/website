@@ -6,9 +6,9 @@ var Route = ReactRouter.Route;
 import App from './components/App.jsx';
 import HeaderNav from './components/HeaderNav.jsx';
 
-ReactDOM.render((  
-  <Router>
+ReactDOM.render(
+  (<Router>
     <Route path="/" component={App} />
     <Route path="/test" component={HeaderNav} />
-  </Router>), 
+  </Router>),
   document.getElementById('app'));
