@@ -4,7 +4,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 import App from './components/App.jsx';
-import HeaderNav from './components/HeaderNav.jsx';
+import HeaderNav from './components/MyHeaderNav.jsx';
 
 ReactDOM.render(
   (<Router>

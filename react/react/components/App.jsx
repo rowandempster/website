@@ -1,22 +1,23 @@
 import React from 'react';
 import HomePager from './HomePager';
-import HeaderNav from './HeaderNav';
+import HeaderNav from './BootStrapHeaderNav';
 var Radium = require('radium');
+import AboutMePageManager from './AboutMe/AboutMePageManager'
 
 var App = React.createClass({
+	getInitialState: function(){
+		return {pageShouldAnimate: true};
+	},
 	clearNav: function(){
 		console.log("content clicked");
-		this.forceUpdate();
-	},
-	keyDown: function(){
-		console.log("detected key down");
+
 	},
 	render: function(){
 		return (
 			<div>
 				<HeaderNav/>
 				<div style={styles.home} onClick={this.clearNav}>
-					<HomePager/>
+					<AboutMePageManager/>
 				</div>
 			</div>
 		);

@@ -50,49 +50,6 @@ var styles = {
 	}
 };
 
-var secondPage = (
-	<Jumbotron style={styles.header}>
-		<h1>
-			Second Page
-		</h1>
-		<p>
-			This is the About Me section of my website
-	</p>
-	<p>
-	Click or tap anywhere to continue
-	</p>
-	</Jumbotron>
-);
-
-var defaultPage = (
-	<Jumbotron style={styles.header}>
-	<h1>
-	defaultPage
-	</h1>
-	<p>
-	This is the About Me section of my website
-	</p>
-	<p>
-	Click or tap anywhere to continue
-	</p>
-	</Jumbotron>
-);
-
-
-var firstPage = (
-	<Jumbotron style={styles.header}>
-		<h1>
-			Hi, my name is Rowan.
-		</h1>
-		<p>
-			This is the About Me section of my website, use the NavBar at the top to explore the other sections
-	</p>
-	<p>
-	Tap enter to continue, or the up arrow to return to the top
-	</p>
-	</Jumbotron>
-);
-
 var HomePager = React.createClass({
 	getInitialState: function(){
 		return {
@@ -138,19 +95,8 @@ var HomePager = React.createClass({
 	render:function(){
 		return (
 			<div tabIndex="1" onKeyDown={this.goToNextPage} ref="homePager"
-			style={styles.home}>
-			{firstPage}
-			{secondPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
-			{defaultPage}
+				style={styles.home}>
+
 			</div>
 		);
 	}
