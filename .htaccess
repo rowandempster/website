@@ -1,5 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine On
-AllowOverride All
-
-RedirectMatch 301 ^/color/$ http://www.google.com/?
