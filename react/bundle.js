@@ -51578,7 +51578,7 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Hi, my name is Rowan. This was deployed using code deploy.'
+	        'Hi, my name is Rowan.'
 	      ),
 	      _react2.default.createElement(
 	        'p',
