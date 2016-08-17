@@ -1,6 +1,0 @@
-(define one (+ -2 3))
-(* (+ one -1) 1000)
-(define rowanPlusOne (+ 5 one))
-(+ rowanPlusOne -5)
-(define rowanPlusTwo (+ (/ 40 40) rowanPlusOne))
-rowanPlusTwo

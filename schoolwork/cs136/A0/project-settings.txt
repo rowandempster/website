@@ -1,1 +1,0 @@
-#hasheq((q3b-runner . "racket-magic-number.rkt") (q3c-runner . "hello.rkt"))

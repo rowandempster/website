@@ -1,3 +1,0 @@
-Student Number: 20635120
-C Magic Number: 248
-Racket Magic Number: 2146

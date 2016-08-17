@@ -1,1 +1,0 @@
-#hasheq((q1-runner . "hello.c") (q2-runner . "c-test.c") (q3-runner . "test-tiles.c") (q4a-runner . "main.c") (q4b-runner . "main.c") (q4c-runner . "main.c") (q4d-runner . "main.c") (q4e-runner . "main.c") (q4ex-runner . "main.c") (q4example-runner . "main.c") (q4f-runner . "main.c") (q5-runner . "test-fixup.c") (sample-runner . "sample.c") (sum-runner . "sum.c"))

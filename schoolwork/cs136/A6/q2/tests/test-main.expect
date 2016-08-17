@@ -1,8 +1,0 @@
-Please enter the degree of the polynomial you want to work with:
-Please enter all the coefficients, beginning from highest degree to lowest:
-Leading coefficient is not allowed to be zero. Please enter a non-zero number:
-Successfully received all coefficients of the polynomial. It looks like:
-2*x^3 + 2*x^2 + 1*x^1
-5
-0
-26

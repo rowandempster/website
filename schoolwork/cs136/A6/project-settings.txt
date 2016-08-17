@@ -1,1 +1,0 @@
-#hasheq((q1-runner . "madlib.c") (q2-runner . "poly_main.c") (q3-runner . "test-math.c") (q4-runner . "test-crypto.c"))

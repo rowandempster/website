@@ -1,9 +1,0 @@
-push hi
-push there
-push rowan
-top
-pop 
-top
-empty?
-reset
-empty?

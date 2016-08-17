@@ -1,1 +1,0 @@
-#hasheq((q1-runner . "test-mstack.rkt") (q1example-runner . "mposn.rkt") (q2-runner . "test-mpq.rkt") (q3black-runner . "test-series.c") (q3gold-runner . "test-series.c") (q4-runner . "test-sqrt.c") (q5-runner . "test-clock.c") (q6-runner . "test-bank.c"))

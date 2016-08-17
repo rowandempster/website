@@ -1,1 +1,0 @@
-#hasheq((bonus-runner . "test-bonus.rkt") (q1-runner . "test-stack.rkt") (q2-runner . "test-queue.rkt") (q3-runner . "test-priorityq.rkt") (q4black-runner . "test-black.rkt") (q4gold-runner . "test-gold.rkt"))
