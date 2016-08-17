@@ -1,0 +1,25 @@
+h1,h3 {color:#660033}
+h1 {font-size:50px}
+h3 {font-size:30px}
+
+body.other {background-color:rgb(120, 169, 149)}
+
+a.useful_link {font-family:Tahoma; font-size:30px}
+
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 15px;
+}
+th{
+    text-align:center;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+table#projects{
+    background-color:#A8DB66;
+}
