@@ -98,7 +98,7 @@
 	
 	var _BootStrapHeaderNav2 = _interopRequireDefault(_BootStrapHeaderNav);
 	
-	var _AboutMePageManager = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./AboutMe/AboutMePageManager\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _AboutMePageManager = __webpack_require__(/*! ./AboutMe/AboutMePageManager */ 475);
 	
 	var _AboutMePageManager2 = _interopRequireDefault(_AboutMePageManager);
 	
@@ -51296,11 +51296,640 @@
 	exports.HeaderData = HeaderData;
 
 /***/ },
-/* 475 */,
-/* 476 */,
-/* 477 */,
-/* 478 */,
-/* 479 */,
+/* 475 */
+/*!*********************************************************!*\
+  !*** ./react/components/AboutMe/AboutMePageManager.jsx ***!
+  \*********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Jumbotron = __webpack_require__(/*! react-bootstrap/lib/Jumbotron */ 37);
+	
+	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
+	
+	var _Button = __webpack_require__(/*! react-bootstrap/lib/Button */ 386);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
+	var _ButtonGroup = __webpack_require__(/*! react-bootstrap/lib/ButtonGroup */ 385);
+	
+	var _ButtonGroup2 = _interopRequireDefault(_ButtonGroup);
+	
+	var _AboutMeView = __webpack_require__(/*! ./AboutMeView */ 476);
+	
+	var _AboutMeView2 = _interopRequireDefault(_AboutMeView);
+	
+	var _PageOne = __webpack_require__(/*! ./Pages/PageOne */ 477);
+	
+	var _PageOne2 = _interopRequireDefault(_PageOne);
+	
+	var _PageTwo = __webpack_require__(/*! ./Pages/PageTwo */ 478);
+	
+	var _PageTwo2 = _interopRequireDefault(_PageTwo);
+	
+	var _PageThree = __webpack_require__(/*! ./Pages/PageThree */ 479);
+	
+	var _PageThree2 = _interopRequireDefault(_PageThree);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Radium = __webpack_require__(/*! radium */ 132);
+	
+	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	
+	var Scroll = __webpack_require__(/*! react-scroll */ 333);
+	var scroll = Scroll.animateScroll;
+	var $ = __webpack_require__(/*! jquery */ 348);
+	
+	
+	//GLOBAL VARS
+	var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 65;
+	var pageIsScrolling = false;
+	var pageArray = [_react2.default.createElement(_PageOne2.default, { height: viewPortHeight }), _react2.default.createElement(_PageTwo2.default, { height: viewPortHeight }), _react2.default.createElement(_PageThree2.default, { height: viewPortHeight })];
+	
+	//COMPONENTS
+	
+	var AboutMePageManager = _react2.default.createClass({
+	  displayName: 'AboutMePageManager',
+	
+	  getInitialState: function getInitialState() {
+	    return {
+	      previousPage: -1,
+	      currentPage: 0
+	    };
+	  },
+	  updateDimensions: function updateDimensions() {
+	    location.reload();
+	  },
+	  componentDidUpdate: function componentDidUpdate() {
+	    ReactDOM.findDOMNode(this.refs.homePager).focus();
+	  },
+	  componentDidMount: function componentDidMount() {
+	    ReactDOM.findDOMNode(this.refs.homePager).focus();
+	    window.addEventListener("resize", this.updateDimensions);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    window.removeEventListener("resize", this.updateDimensions);
+	  },
+	  goToTopFromButton: function goToTopFromButton() {
+	    if (!pageIsScrolling) {
+	      this.setState({
+	        previousPage: -1,
+	        currentPage: 0
+	      });
+	    }
+	  },
+	  goToNextPageFromButton: function goToNextPageFromButton() {
+	    if (!pageIsScrolling && this.state.currentPage + 1 < pageArray.length) {
+	      this.setState({
+	        previousPage: this.state.previousPage + 1,
+	        currentPage: this.state.currentPage + 1
+	      });
+	      pageIsScrolling = true;
+	      setTimeout(function () {
+	        pageIsScrolling = false;
+	      }, 2000);
+	    }
+	  },
+	  goToNextPage: function goToNextPage(key) {
+	    if (key.keyCode == 13 && !pageIsScrolling && this.state.currentPage + 1 < pageArray.length) {
+	      this.setState({
+	        previousPage: this.state.previousPage + 1,
+	        currentPage: this.state.currentPage + 1
+	      });
+	      pageIsScrolling = true;
+	      setTimeout(function () {
+	        pageIsScrolling = false;
+	      }, 2000);
+	    } else if (key.keyCode == 38 && !pageIsScrolling) {
+	      this.setState({
+	        previousPage: -1,
+	        currentPage: 0
+	      });
+	    }
+	  },
+	  render: function render() {
+	    var nextPageButton;
+	    if (this.state.currentPage == pageArray.length - 1) {
+	      nextPageButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToNextPageFromButton, disabled: true, bsStyle: 'primary', style: styles.bottomButton },
+	        'Go To Next Page'
+	      );
+	    } else {
+	      nextPageButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToNextPageFromButton, bsStyle: 'primary', style: styles.bottomButton },
+	        'Go To Next Page'
+	      );
+	    }
+	    var returnToTopButton;
+	    if (this.state.previousPage == -1) {
+	      returnToTopButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToTopFromButton, disabled: true, bsStyle: 'primary', style: styles.bottomButton },
+	        'Return To Top'
+	      );
+	    } else {
+	      returnToTopButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToTopFromButton, bsStyle: 'primary', style: styles.bottomButton },
+	        'Return To Top'
+	      );
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      { tabIndex: '1', onKeyDown: this.goToNextPage, ref: 'homePager',
+	        style: styles.home },
+	      _react2.default.createElement(_AboutMeView2.default, { height: viewPortHeight, previousPage: this.state.previousPage,
+	        currentPage: this.state.currentPage, pageArray: pageArray }),
+	      _react2.default.createElement(
+	        _ButtonGroup2.default,
+	        { style: styles.bottomButtonContainter },
+	        nextPageButton,
+	        returnToTopButton
+	      )
+	    );
+	  }
+	});
+	
+	// styles
+	
+	var styles = {
+	  home: {
+	    position: "absolute",
+	    top: 32,
+	    left: 0,
+	    width: "100%",
+	    outline: "none"
+	  },
+	  bottomButtonContainter: {
+	    width: "100%"
+	  },
+	  bottomButton: {
+	    display: "inline",
+	    width: "50%",
+	    margin: 0,
+	    paddingTop: 5
+	  }
+	};
+	
+	// EXPORTS
+	
+	AboutMePageManager = Radium(AboutMePageManager);
+	
+	exports.default = AboutMePageManager;
+
+/***/ },
+/* 476 */
+/*!**************************************************!*\
+  !*** ./react/components/AboutMe/AboutMeView.jsx ***!
+  \**************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _PageOne = __webpack_require__(/*! ./Pages/PageOne */ 477);
+	
+	var _PageOne2 = _interopRequireDefault(_PageOne);
+	
+	var _PageTwo = __webpack_require__(/*! ./Pages/PageTwo */ 478);
+	
+	var _PageTwo2 = _interopRequireDefault(_PageTwo);
+	
+	var _PageThree = __webpack_require__(/*! ./Pages/PageThree */ 479);
+	
+	var _PageThree2 = _interopRequireDefault(_PageThree);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Radium = __webpack_require__(/*! radium */ 132);
+	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	var Scroll = __webpack_require__(/*! react-scroll */ 333);
+	var scroll = Scroll.animateScroll;
+	var $ = __webpack_require__(/*! jquery */ 348);
+	
+	
+	var ViewToShow = _react2.default.createClass({
+	  displayName: 'ViewToShow',
+	
+	  getInitialState: function getInitialState() {
+	    return {
+	      doneAnimating: false
+	    };
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    this.setState({
+	      doneAnimating: false
+	    });
+	  },
+	  setAnimationStateToTrue: function setAnimationStateToTrue() {
+	    this.setState({
+	      doneAnimating: true
+	    });
+	  },
+	  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
+	    if (this.props.previousPage >= 0 && !this.state.doneAnimating) {
+	      $('html, body').animate({
+	        scrollTop: this.props.height
+	      }, 1000);
+	      if (!this.state.doneAnimating) {
+	        setTimeout(this.setAnimationStateToTrue, 1000);
+	      }
+	    }
+	  },
+	  render: function render() {
+	    var pageArray = this.props.pageArray;
+	    if (this.props.previousPage >= 0) {
+	      var previousPage = pageArray[this.props.previousPage];
+	    } else {
+	      var previousPage = null;
+	    }
+	    var currentPage = pageArray[this.props.currentPage];
+	    if (!this.state.doneAnimating) {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        previousPage,
+	        currentPage
+	      );
+	    } else {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        currentPage
+	      );
+	    }
+	  }
+	});
+	
+	exports.default = ViewToShow;
+
+/***/ },
+/* 477 */
+/*!****************************************************!*\
+  !*** ./react/components/AboutMe/Pages/PageOne.jsx ***!
+  \****************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Jumbotron = __webpack_require__(/*! react-bootstrap/lib/Jumbotron */ 37);
+	
+	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
+	
+	var _Button = __webpack_require__(/*! react-bootstrap/lib/Button */ 386);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Radium = __webpack_require__(/*! radium */ 132);
+	
+	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	var Scroll = __webpack_require__(/*! react-scroll */ 333);
+	var scroll = Scroll.animateScroll;
+	var $ = __webpack_require__(/*! jquery */ 348);
+	
+	var PageOne = _react2.default.createClass({
+	  displayName: 'PageOne',
+	
+	  render: function render() {
+	    var styles = {
+	      jumbotron: {
+	        marginBottom: 0,
+	        paddingLeft: 50,
+	        height: this.props.height,
+	        overflowY: "scroll",
+	        right: 0,
+	        marginRight: 0,
+	        paddingRight: 0,
+	        overflowX: "hidden"
+	      }
+	    };
+	    return _react2.default.createElement(
+	      _Jumbotron2.default,
+	      { style: styles.jumbotron },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Hi, my name is Rowan. Test push to develop. Hi.'
+	      ),
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Tap ',
+	        _react2.default.createElement('img', { height: 30, width: 70, src: 'react/images/enter_key.png', alt: 'Enter Key' }),
+	        ' to continue. Hit ',
+	        _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
+	        ' at any time to return to the top'
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = PageOne;
+
+/***/ },
+/* 478 */
+/*!****************************************************!*\
+  !*** ./react/components/AboutMe/Pages/PageTwo.jsx ***!
+  \****************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Jumbotron = __webpack_require__(/*! react-bootstrap/lib/Jumbotron */ 37);
+	
+	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Radium = __webpack_require__(/*! radium */ 132);
+	
+	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	var Scroll = __webpack_require__(/*! react-scroll */ 333);
+	var scroll = Scroll.animateScroll;
+	var $ = __webpack_require__(/*! jquery */ 348);
+	
+	var PageTwo = _react2.default.createClass({
+	  displayName: 'PageTwo',
+	
+	  render: function render() {
+	    var style = {
+	      marginBottom: 0,
+	      paddingLeft: 50,
+	      height: this.props.height,
+	      overflowY: "scroll"
+	    };
+	    return _react2.default.createElement(
+	      _Jumbotron2.default,
+	      { style: style },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Universtiy of Waterloo'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'I finished my first two terms of school and first co-op term at the University of Waterloo.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'I am in the CS class of 2020.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = PageTwo;
+
+/***/ },
+/* 479 */
+/*!******************************************************!*\
+  !*** ./react/components/AboutMe/Pages/PageThree.jsx ***!
+  \******************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Jumbotron = __webpack_require__(/*! react-bootstrap/lib/Jumbotron */ 37);
+	
+	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Radium = __webpack_require__(/*! radium */ 132);
+	
+	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	var Scroll = __webpack_require__(/*! react-scroll */ 333);
+	var scroll = Scroll.animateScroll;
+	var $ = __webpack_require__(/*! jquery */ 348);
+	
+	var PageThree = _react2.default.createClass({
+	  displayName: 'PageThree',
+	
+	  render: function render() {
+	    var style = {
+	      marginBottom: 0,
+	      paddingLeft: 50,
+	      height: this.props.height,
+	      overflowY: "scroll"
+	    };
+	    return _react2.default.createElement(
+	      _Jumbotron2.default,
+	      { style: style },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'TribalScale'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'First my first co-op I worked at TribalScale in downtown Toronto.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'At TribalScale I worked as an Android developer, developing mobile apps for ABC News and Helpful Inc.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = PageThree;
+
+/***/ },
 /* 480 */
 /*!******************************************!*\
   !*** ./react/components/MyHeaderNav.jsx ***!
