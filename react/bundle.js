@@ -106,6 +106,7 @@
 	
 	var Radium = __webpack_require__(/*! radium */ 132);
 	
+	var $ = __webpack_require__(/*! jquery */ 348);
 	
 	var App = _react2.default.createClass({
 		displayName: 'App',
@@ -116,6 +117,11 @@
 		clearNav: function clearNav() {
 			console.log("content clicked");
 		},
+		componentDidMount: function componentDidMount() {
+			document.body.style.overflow = 'hidden';
+			document.body.style.overflowX = 'hidden';
+		},
+	
 		render: function render() {
 			return _react2.default.createElement(
 				'div',
@@ -51364,6 +51370,9 @@
 	  updateDimensions: function updateDimensions() {
 	    location.reload();
 	  },
+	  componentDidUpdate: function componentDidUpdate() {
+	    ReactDOM.findDOMNode(this.refs.homePager).focus();
+	  },
 	  componentDidMount: function componentDidMount() {
 	    ReactDOM.findDOMNode(this.refs.homePager).focus();
 	    window.addEventListener("resize", this.updateDimensions);
@@ -51406,7 +51415,6 @@
 	    }
 	  },
 	  render: function render() {
-	    console.log("rendering with reset = " + this.state.reset);
 	    var nextPageButton;
 	    if (this.state.currentPage == pageArray.length - 1) {
 	      nextPageButton = _react2.default.createElement(
@@ -51537,9 +51545,6 @@
 	  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
 	    if (this.props.previousPage >= 0 && !this.state.doneAnimating) {
 	      $('html, body').animate({
-	        scrollTop: 0
-	      }, 1);
-	      $('html, body').animate({
 	        scrollTop: this.props.height
 	      }, 1000);
 	      if (!this.state.doneAnimating) {
@@ -51617,7 +51622,11 @@
 	        marginBottom: 0,
 	        paddingLeft: 50,
 	        height: this.props.height,
-	        overflowY: "scroll"
+	        overflowY: "scroll",
+	        right: 0,
+	        marginRight: 0,
+	        paddingRight: 0,
+	        overflowX: "hidden"
 	      }
 	    };
 	    return _react2.default.createElement(
@@ -51642,26 +51651,6 @@
 	        ' to continue. Hit ',
 	        _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
 	        ' at any time to return to the top'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      )
 	    );
 	  }
@@ -51766,6 +51755,46 @@
 	        'p',
 	        null,
 	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      )
 	    );
 	  }
@@ -51830,6 +51859,46 @@
 	        'p',
 	        null,
 	        'At TribalScale I worked as an Android developer, developing mobile apps for ABC News and Helpful Inc.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      ),
 	      _react2.default.createElement(
 	        'p',
