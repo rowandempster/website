@@ -51638,7 +51638,7 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Hi, my name is Rowan. Test push to master'
+	        'Hi, my name is Rowan.'
 	      ),
 	      _react2.default.createElement('br', null),
 	      _react2.default.createElement(
