@@ -51361,8 +51361,12 @@
 	      currentPage: 0
 	    };
 	  },
+	  updateDimensions: function updateDimensions() {
+	    location.reload();
+	  },
 	  componentDidMount: function componentDidMount() {
 	    ReactDOM.findDOMNode(this.refs.homePager).focus();
+	    window.addEventListener("resize", this.updateDimensions);
 	  },
 	  goToTopFromButton: function goToTopFromButton() {
 	    if (!pageIsScrolling) {
@@ -51531,7 +51535,7 @@
 	    });
 	  },
 	  componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
-	    if (this.props.previousPage >= 0) {
+	    if (this.props.previousPage >= 0 && !this.state.doneAnimating) {
 	      $('html, body').animate({
 	        scrollTop: 0
 	      }, 1);
@@ -51611,44 +51615,53 @@
 	    var styles = {
 	      jumbotron: {
 	        marginBottom: 0,
-	        paddingLeft: 50
-	      },
-	      container: {
+	        paddingLeft: 50,
 	        height: this.props.height,
-	        backgroundColor: "#EEEEEE"
-	      },
-	      nextPageButton: {
-	        position: "absolute",
-	        bottom: 0,
-	        left: 0
+	        overflowY: "scroll"
 	      }
 	    };
 	    return _react2.default.createElement(
-	      'div',
-	      { style: styles.container },
+	      _Jumbotron2.default,
+	      { style: styles.jumbotron },
 	      _react2.default.createElement(
-	        _Jumbotron2.default,
-	        { style: styles.jumbotron },
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Hi, my name is Rowan.'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Tap ',
-	          _react2.default.createElement('img', { height: 30, width: 70, src: 'react/images/enter_key.png', alt: 'Enter Key' }),
-	          ' to continue. Hit ',
-	          _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
-	          ' at any time to return to the top'
-	        )
+	        'h1',
+	        null,
+	        'Hi, my name is Rowan.'
+	      ),
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Tap ',
+	        _react2.default.createElement('img', { height: 30, width: 70, src: 'react/images/enter_key.png', alt: 'Enter Key' }),
+	        ' to continue. Hit ',
+	        _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
+	        ' at any time to return to the top'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      )
 	    );
 	  }
@@ -51691,8 +51704,10 @@
 	
 	  render: function render() {
 	    var style = {
+	      marginBottom: 0,
+	      paddingLeft: 50,
 	      height: this.props.height,
-	      marginBottom: 0
+	      overflowY: "scroll"
 	    };
 	    return _react2.default.createElement(
 	      _Jumbotron2.default,
@@ -51711,6 +51726,46 @@
 	        'p',
 	        null,
 	        'I am in the CS class of 2020.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      )
 	    );
 	  }
@@ -51753,8 +51808,10 @@
 	
 	  render: function render() {
 	    var style = {
+	      marginBottom: 0,
+	      paddingLeft: 50,
 	      height: this.props.height,
-	      marginBottom: 0
+	      overflowY: "scroll"
 	    };
 	    return _react2.default.createElement(
 	      _Jumbotron2.default,
@@ -51773,6 +51830,26 @@
 	        'p',
 	        null,
 	        'At TribalScale I worked as an Android developer, developing mobile apps for ABC News and Helpful Inc.'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
 	      )
 	    );
 	  }
