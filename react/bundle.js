@@ -51310,6 +51310,14 @@
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
+	var _Button = __webpack_require__(/*! react-bootstrap/lib/Button */ 386);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
+	var _ButtonGroup = __webpack_require__(/*! react-bootstrap/lib/ButtonGroup */ 385);
+	
+	var _ButtonGroup2 = _interopRequireDefault(_ButtonGroup);
+	
 	var _AboutMeView = __webpack_require__(/*! ./AboutMeView */ 476);
 	
 	var _AboutMeView2 = _interopRequireDefault(_AboutMeView);
@@ -51331,13 +51339,14 @@
 	var Radium = __webpack_require__(/*! radium */ 132);
 	
 	var ReactDOM = __webpack_require__(/*! react-dom */ 193);
+	
 	var Scroll = __webpack_require__(/*! react-scroll */ 333);
 	var scroll = Scroll.animateScroll;
 	var $ = __webpack_require__(/*! jquery */ 348);
 	
 	
 	//GLOBAL VARS
-	var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 34;
+	var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 65;
 	var pageIsScrolling = false;
 	var pageArray = [_react2.default.createElement(_PageOne2.default, { height: viewPortHeight }), _react2.default.createElement(_PageTwo2.default, { height: viewPortHeight }), _react2.default.createElement(_PageThree2.default, { height: viewPortHeight })];
 	
@@ -51353,8 +51362,27 @@
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
-	    // disableScroll();
 	    ReactDOM.findDOMNode(this.refs.homePager).focus();
+	  },
+	  goToTopFromButton: function goToTopFromButton() {
+	    if (!pageIsScrolling) {
+	      this.setState({
+	        previousPage: -1,
+	        currentPage: 0
+	      });
+	    }
+	  },
+	  goToNextPageFromButton: function goToNextPageFromButton() {
+	    if (!pageIsScrolling && this.state.currentPage + 1 < pageArray.length) {
+	      this.setState({
+	        previousPage: this.state.previousPage + 1,
+	        currentPage: this.state.currentPage + 1
+	      });
+	      pageIsScrolling = true;
+	      setTimeout(function () {
+	        pageIsScrolling = false;
+	      }, 2000);
+	    }
 	  },
 	  goToNextPage: function goToNextPage(key) {
 	    if (key.keyCode == 13 && !pageIsScrolling && this.state.currentPage + 1 < pageArray.length) {
@@ -51375,49 +51403,49 @@
 	  },
 	  render: function render() {
 	    console.log("rendering with reset = " + this.state.reset);
+	    var nextPageButton;
+	    if (this.state.currentPage == pageArray.length - 1) {
+	      nextPageButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToNextPageFromButton, disabled: true, bsStyle: 'primary', style: styles.bottomButton },
+	        'Go To Next Page'
+	      );
+	    } else {
+	      nextPageButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToNextPageFromButton, bsStyle: 'primary', style: styles.bottomButton },
+	        'Go To Next Page'
+	      );
+	    }
+	    var returnToTopButton;
+	    if (this.state.previousPage == -1) {
+	      returnToTopButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToTopFromButton, disabled: true, bsStyle: 'primary', style: styles.bottomButton },
+	        'Return To Top'
+	      );
+	    } else {
+	      returnToTopButton = _react2.default.createElement(
+	        _Button2.default,
+	        { onClick: this.goToTopFromButton, bsStyle: 'primary', style: styles.bottomButton },
+	        'Return To Top'
+	      );
+	    }
 	    return _react2.default.createElement(
 	      'div',
 	      { tabIndex: '1', onKeyDown: this.goToNextPage, ref: 'homePager',
 	        style: styles.home },
 	      _react2.default.createElement(_AboutMeView2.default, { height: viewPortHeight, previousPage: this.state.previousPage,
-	        currentPage: this.state.currentPage, pageArray: pageArray })
+	        currentPage: this.state.currentPage, pageArray: pageArray }),
+	      _react2.default.createElement(
+	        _ButtonGroup2.default,
+	        { style: styles.bottomButtonContainter },
+	        nextPageButton,
+	        returnToTopButton
+	      )
 	    );
 	  }
 	});
-	
-	//DISABLING SCROLL
-	
-	
-	var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-	
-	function preventDefault(e) {
-	  e = e || window.event;
-	  if (e.preventDefault) e.preventDefault();
-	  e.returnValue = false;
-	}
-	
-	function preventDefaultForScrollKeys(e) {
-	  if (keys[e.keyCode]) {
-	    preventDefault(e);
-	    return false;
-	  }
-	}
-	
-	function disableScroll() {
-	  if (window.addEventListener) // older FF
-	    window.addEventListener('DOMMouseScroll', preventDefault, false);
-	  window.onwheel = preventDefault; // modern standard
-	  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-	  window.ontouchmove = preventDefault; // mobile
-	  document.onkeydown = preventDefaultForScrollKeys;
-	  $('body').on({
-	    'mousewheel': function mousewheel(e) {
-	      if (e.target.id == 'el') return;
-	      e.preventDefault();
-	      e.stopPropagation();
-	    }
-	  });
-	}
 	
 	// styles
 	
@@ -51428,6 +51456,15 @@
 	    left: 0,
 	    width: "100%",
 	    outline: "none"
+	  },
+	  bottomButtonContainter: {
+	    width: "100%"
+	  },
+	  bottomButton: {
+	    display: "inline",
+	    width: "50%",
+	    margin: 0,
+	    paddingTop: 5
 	  }
 	};
 	
@@ -51554,6 +51591,10 @@
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
+	var _Button = __webpack_require__(/*! react-bootstrap/lib/Button */ 386);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Radium = __webpack_require__(/*! radium */ 132);
@@ -51567,32 +51608,47 @@
 	  displayName: 'PageOne',
 	
 	  render: function render() {
-	    var style = {
-	      height: this.props.height,
-	      marginBottom: 0,
-	      paddingLeft: 50
+	    var styles = {
+	      jumbotron: {
+	        marginBottom: 0,
+	        paddingLeft: 50
+	      },
+	      container: {
+	        height: this.props.height,
+	        backgroundColor: "#EEEEEE"
+	      },
+	      nextPageButton: {
+	        position: "absolute",
+	        bottom: 0,
+	        left: 0
+	      }
 	    };
 	    return _react2.default.createElement(
-	      _Jumbotron2.default,
-	      { style: style },
+	      'div',
+	      { style: styles.container },
 	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Hi, my name is Rowan.'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        'Tap ',
-	        _react2.default.createElement('img', { height: 30, width: 70, src: 'react/images/enter_key.png', alt: 'Enter Key' }),
-	        ' to continue. Hit ',
-	        _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
-	        ' at any time to return to the top'
+	        _Jumbotron2.default,
+	        { style: styles.jumbotron },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Hi, my name is Rowan.'
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'This is the About Me section of my website, use the NavBar at the top to explore the other sections'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Tap ',
+	          _react2.default.createElement('img', { height: 30, width: 70, src: 'react/images/enter_key.png', alt: 'Enter Key' }),
+	          ' to continue. Hit ',
+	          _react2.default.createElement('img', { height: 40, width: 40, src: 'react/images/up_key.png', alt: 'Up Arrow' }),
+	          ' at any time to return to the top'
+	        )
 	      )
 	    );
 	  }
