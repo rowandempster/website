@@ -51377,6 +51377,9 @@
 	    ReactDOM.findDOMNode(this.refs.homePager).focus();
 	    window.addEventListener("resize", this.updateDimensions);
 	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    window.removeEventListener("resize", this.updateDimensions);
+	  },
 	  goToTopFromButton: function goToTopFromButton() {
 	    if (!pageIsScrolling) {
 	      this.setState({
@@ -51635,7 +51638,7 @@
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Hi, my name is Rowan.'
+	        'Hi, my name is Rowan. Test push to develop'
 	      ),
 	      _react2.default.createElement('br', null),
 	      _react2.default.createElement(
