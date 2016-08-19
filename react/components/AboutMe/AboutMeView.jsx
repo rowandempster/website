@@ -26,15 +26,18 @@ var ViewToShow = React.createClass({
       doneAnimating: true
     });
   },
-  componentDidUpdate: function(prevProps, prevState) {
-    if(this.props.previousPage>=0 && !(this.state.doneAnimating)){
-      $('html, body').animate({
-        scrollTop: this.props.height
-      }, 1000);
-      if(!(this.state.doneAnimating)){
-        setTimeout(this.setAnimationStateToTrue
-          , 1000);
-        }
+  scrollToNextPage:function(){
+    $('html, body').animate({
+      scrollTop: this.props.height
+    }, 1000);
+    if(!(this.state.doneAnimating)){
+      setTimeout(this.setAnimationStateToTrue
+        , 1000);
+      }
+    },
+    componentDidUpdate: function(prevProps, prevState) {
+      if(this.props.previousPage>=0 && !(this.state.doneAnimating)){
+        this.scrollToNextPage();
       }
     },
     render: function(){

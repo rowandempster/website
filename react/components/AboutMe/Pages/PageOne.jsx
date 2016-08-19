@@ -28,7 +28,7 @@ var PageOne = React.createClass({
           </h1>
           <br/>
           <p>
-            This is the About Me section of my website, use the NavBar at the top to explore the other sections
+            This is the homepage of my website. Use the navigation bar at the top to explore the other sections.
           </p>
           <p>
             Tap <img height={30} width={70} src="react/images/enter_key.png" alt="Enter Key"/> to continue. Hit <img height={40} width={40} src="react/images/up_key.png" alt="Up Arrow"/> at any time to return to the top
