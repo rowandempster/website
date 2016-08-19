@@ -17,11 +17,16 @@ var config = {
         include : APP_DIR,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {presets:['es2015', 'react']}
+        query: {presets:['es2015', 'react']},
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules',
+        include: /flexboxgrid/,
       }
     ]
-  }, 
-    resolve: {
+  },
+  resolve: {
     modulesDirectories: ['node_modules', 'bower_components'],
     extensions: ['', '.js', '.jsx']
   }
