@@ -20,6 +20,7 @@ var pageArray = [
   <PageOne height={viewPortHeight}/>,
   <PageTwo height={viewPortHeight}/>,
   <PageThree height={viewPortHeight}/>];
+  const ANIMATION_TIME = 500;
 
   //COMPONENTS
 
@@ -63,7 +64,7 @@ var pageArray = [
         pageIsScrolling = true;
         setTimeout(function(){
           pageIsScrolling = false;
-        }, 2000);
+        }, ANIMATION_TIME);
       }
     },
     handleKeyDown: function(key){

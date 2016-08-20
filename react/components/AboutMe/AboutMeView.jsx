@@ -8,7 +8,7 @@ import PageOne from './Pages/PageOne'
 import PageTwo from './Pages/PageTwo'
 import PageThree from './Pages/PageThree'
 
-
+const ANIMATION_TIME = 500;
 
 var ViewToShow = React.createClass({
   getInitialState: function(){
@@ -29,10 +29,10 @@ var ViewToShow = React.createClass({
   scrollToNextPage:function(){
     $('html, body').animate({
       scrollTop: this.props.height
-    }, 1000);
+    }, ANIMATION_TIME);
     if(!(this.state.doneAnimating)){
       setTimeout(this.setAnimationStateToTrue
-        , 1000);
+        , ANIMATION_TIME);
       }
     },
     componentDidUpdate: function(prevProps, prevState) {

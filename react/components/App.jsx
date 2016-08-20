@@ -4,6 +4,7 @@ import HeaderNav from './BootStrapHeaderNav';
 var Radium = require('radium');
 import AboutMePageManager from './AboutMe/AboutMePageManager'
 var $ = require('jquery');
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 var App = React.createClass({
 	getInitialState: function(){
@@ -20,8 +21,10 @@ var App = React.createClass({
 	render: function(){
 		return (
 			<div>
-			<HeaderNav/>
-			<AboutMePageManager/>
+				<HeaderNav/>
+				<MuiThemeProvider>
+					<AboutMePageManager/>
+				</MuiThemeProvider>
 			</div>
 		);
 	}
