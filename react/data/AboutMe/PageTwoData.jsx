@@ -1,7 +1,11 @@
 import React from 'react';
 
+//PAGE ONE
 
-var rowOneContent =
+//---ROWS
+
+//---------ROW ONE
+var pageOneRowOneContent =
 <div>
   <p>
     I finished my first two terms of school and first co-op term at the University of Waterloo.
@@ -9,28 +13,35 @@ var rowOneContent =
   <p>
     I am in the CS class of 2020
   </p>
-  <p>
-    I am in the CS class of 2020
-  </p>
-  <p>
-    I am in the CS class of 2020
-  </p>
-  <p>
-    I am in the CS class of 2020
-  </p>
 </div>
 
-var rowOne = {
+var pageOneRowOne = {
     imageSrc: "http://cemc.uwaterloo.ca/!images/donors/UniversityOfWaterloo_logo_horiz_rgb.png",
     imageAlt: "Waterloo",
-    content: rowOneContent
+    content: pageOneRowOneContent
   };
 
-  var rowArray = [rowOne, rowOne];
+//---------ROW TWO
 
-var PageTwoData = {
-  header: "Education",
-  rows: rowArray
+ //---ROW ARRAY
+
+var pageOneRowArray = [pageOneRowOne];
+
+//---HEADER
+var pageOneHeader = {
+  imageSrc: "https://image.freepik.com/free-icon/graduation-cap-variant_318-47155.png",
+  text: "Education"
+}
+
+//---PAGE
+var PageOneData = {
+  header: pageOneHeader,
+  rows: pageOneRowArray,
+  key:1
+
 };
 
-exports.PageTwoData = PageTwoData;
+
+var PageArray = [PageOneData]
+
+exports.PageArray = PageArray;

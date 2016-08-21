@@ -6,14 +6,7 @@ import AboutMePageManager from './AboutMe/AboutMePageManager'
 var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-var App = React.createClass({
-	getInitialState: function(){
-		return {pageShouldAnimate: true};
-	},
-	clearNav: function(){
-		console.log("content clicked");
-
-	},
+var Home = React.createClass({
 	componentDidMount(){
 		document.body.style.overflow = 'hidden';
 		document.body.style.overflowX = 'hidden';
@@ -30,8 +23,5 @@ var App = React.createClass({
 	}
 });
 
-App = Radium(App);
 
-
-
-export default App;
+export default Home;

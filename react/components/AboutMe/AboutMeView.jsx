@@ -5,8 +5,6 @@ var Scroll  = require('react-scroll');
 var scroll  = Scroll.animateScroll;
 var $ = require('jquery');
 import PageOne from './Pages/PageOne'
-import PageTwo from './Pages/PageTwo'
-import PageThree from './Pages/PageThree'
 
 const ANIMATION_TIME = 500;
 

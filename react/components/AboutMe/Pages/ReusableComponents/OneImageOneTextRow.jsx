@@ -1,15 +1,8 @@
 import React from 'react';
-var Radium = require('radium');
-import Jumbotron from 'react-bootstrap/lib/Jumbotron';
-import PageHeader from 'react-bootstrap/lib/PageHeader';
-import Well from 'react-bootstrap/lib/Well';
-import { Row, Col, Spinner } from 'elemental'
-var ReactDOM = require('react-dom');
-var Scroll  = require('react-scroll');
-var scroll  = Scroll.animateScroll;
-var $ = require('jquery');
+import { Row, Col } from 'elemental'
 import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
+import Well from 'react-bootstrap/lib/Well';
+
 
 var style = {
   image: {
@@ -30,7 +23,7 @@ var style = {
   },
   textContainer: {
     fontSize:25,
-    background: "#F7F7F7"
+    background: "#F7F7F7",
   },
   column: {
     "alignSelf":"center",
