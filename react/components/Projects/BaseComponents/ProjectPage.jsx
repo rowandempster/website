@@ -1,15 +1,11 @@
 import React from 'react';
-import HomePager from './HomePager';
-import HeaderNav from './BootStrapHeaderNav';
+import HeaderNav from '/Users/rowandempster/Documents/website-react/react/components/BootStrapHeaderNav.jsx';
 var ReactDOM = require('react-dom');
 var Radium = require('radium');
-import ProjectCell from './Projects/ProjectCell'
+import ProjectCell from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectCell.jsx';
 var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-var myModule = require('../data/ProjectsData');
-var projectsData = myModule.ProjectsData;
-var projectsDataArray = projectsData.projectsDataArray;
-import HeaderWithIconAndDivider from './AboutMe/Pages/ReusableComponents/HeaderWithIconAndDivider'
+import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/Pages/ReusableComponents/HeaderWithIconAndDivider.jsx'
 
 var style= {
 	pageHeader: {
@@ -19,6 +15,8 @@ var style= {
 };
 var Projects = React.createClass({
 	render: function(){
+		console.log(this.props.data);
+    var projectsDataArray = this.props.data.projectsDataArray;
 		var projectsViewArray = [];
 		for (var i = 0; i<projectsDataArray.length; i++){
 			var projectData = projectsDataArray[i];
@@ -42,8 +40,8 @@ var Projects = React.createClass({
 					<div style={style.pageHeader}>
 						<MuiThemeProvider>
 							<HeaderWithIconAndDivider
-								text={projectsData.headerText}
-								imageSrc={projectsData.headerImageSrc}/>
+								text={this.props.data.headerText}
+								imageSrc={this.props.data.headerImageSrc}/>
 						</MuiThemeProvider>
 					</div>
 					{projectsViewArray}

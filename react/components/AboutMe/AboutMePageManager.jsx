@@ -10,7 +10,7 @@ var $ = require('jquery');
 import AboutMeView from './AboutMeView'
 import PageOne from './Pages/PageOne'
 import ContentPage from './Pages/ReusableComponents/ContentPage'
-var data = require('/Users/rowandempster/Documents/website-react/react/data/AboutMe/PageTwoData');
+var data = require('/Users/rowandempster/Documents/website-react/react/data/AboutMe/ContentPagesData');
 
 //GLOBAL VARS
 var viewPortHeight = (Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) - 65;

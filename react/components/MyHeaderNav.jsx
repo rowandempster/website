@@ -42,14 +42,14 @@ var HeaderNav = React.createClass({
 				onClick={this.showAndCloseOthers.bind(this, (headerArray[i]).id)}
 				key={(headerArray[i]).id}>
 				<HeaderNavDropDownButton data={(headerArray[i])} key={(headerArray[i]).id} idToShow={this.state.showingDropDownId}/>
-				</li>);
+			</li>);
 				headerViewArray.push(viewToPush);
 			}
 			return (
 				<div style={styles.headerContainer}>
-				<ul style={styles.list}>
-				{headerViewArray}
-				</ul>
+					<ul style={styles.list}>
+						{headerViewArray}
+					</ul>
 				</div>
 
 			);

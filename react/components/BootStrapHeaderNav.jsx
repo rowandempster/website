@@ -42,12 +42,12 @@ var DropDownItem = React.createClass({
     var route = this.props.route;
     if(route){
       return(
-          <Link style={this.props.style} to={link}>{item}</Link>
+        <Link style={this.props.style} to={link}>{item}</Link>
       );
     }
     else{
       return(
-          <a style={this.props.style} href={link}>{item}</a>
+        <a style={this.props.style} href={link}>{item}</a>
       );
     }
   }
@@ -56,6 +56,7 @@ var DropDownItem = React.createClass({
 
 var HeaderNav = React.createClass({
   render:function(){
+    console.log("rerendering headernav");
     var dropDownDataArray = headerData.array;
     var dropDownViewArray = [];
     for(var i = 0; i<dropDownDataArray.length; i++){
@@ -64,14 +65,14 @@ var HeaderNav = React.createClass({
       for(var j = 0; j<itemDataArray.length; j++){
         var itemViewToPush =
         <div style={styles.dropDownLinkContainer} key={itemDataArray[j].id}>
-          <DropDownItem style={styles.dropDownItem} item={itemDataArray[j].item} link={itemDataArray[j].link}
-            route={itemDataArray[j].route} key={itemDataArray[j].id}/>
+        <DropDownItem style={styles.dropDownItem} item={itemDataArray[j].item} link={itemDataArray[j].link}
+        route={itemDataArray[j].route} key={itemDataArray[j].id} id={itemDataArray[j].id}/>
         </div>;
         // var itemViewToPush = <p>hello</p>;
         itemViewArray.push(itemViewToPush);
       }
       var dropDownViewToPush = <NavDropdown eventKey={dropDownDataArray[i].id}
-        key={dropDownDataArray[i].id} title={dropDownDataArray[i].buttonTitle}>
+        key={dropDownDataArray[i].id} id={dropDownDataArray[i].id} title={dropDownDataArray[i].buttonTitle}>
         {itemViewArray}
       </NavDropdown>
       dropDownViewArray.push(dropDownViewToPush);
@@ -79,22 +80,22 @@ var HeaderNav = React.createClass({
 
     return (<Navbar fixedTop={true} fluid={true}>
       <Navbar.Brand>
-        <Link to={'/'}>{headerData.brand}</Link>
+      <Link to={'/'}>{headerData.brand}</Link>
       </Navbar.Brand>
       <Navbar.Collapse>
-        <Nav>
-          {dropDownViewArray}
-        </Nav>
-        <Nav pullRight>
-          <NavItem>
-            <DropDownItem style={styles.rightSideItem} route={true} item={"Contact Me"} link={"http://google.com"}/>
-          </NavItem>
-          <NavItem>
-            <DropDownItem style={styles.rightSideItem} route={true} item={"Resume"} link={"http://google.com"}/>
-          </NavItem>
-        </Nav>
+      <Nav>
+      {dropDownViewArray}
+      </Nav>
+      <Nav pullRight>
+      <NavItem>
+      <DropDownItem style={styles.rightSideItem} route={true} item={"Contact Me"} link={"http://google.com"}/>
+      </NavItem>
+      <NavItem>
+      <DropDownItem style={styles.rightSideItem} route={true} item={"Resume"} link={"http://google.com"}/>
+      </NavItem>
+      </Nav>
       </Navbar.Collapse>
-    </Navbar>);
+      </Navbar>);
     }
   });
 

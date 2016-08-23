@@ -6,18 +6,18 @@ import AboutMePageManager from './AboutMe/AboutMePageManager'
 var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-var Home = React.createClass({
-	render: function(){
-		return (
-			<div>
-				<HeaderNav/>
-				<MuiThemeProvider>
-					<AboutMePageManager/>
-				</MuiThemeProvider>
-			</div>
-		);
-	}
-});
+var App = React.createClass({
+	render:function(){
+			return (
+        <div>
+          <HeaderNav/>
+          <MuiThemeProvider>
+            {this.props.children}
+          </MuiThemeProvider>
+        </div>
+			);
+		}
+	});
 
 
-export default Home;
+	export default App;

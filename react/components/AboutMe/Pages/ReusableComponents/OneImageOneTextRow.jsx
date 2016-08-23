@@ -47,7 +47,7 @@ var OneImageOneTextRow = React.createClass({
           <img style={style.image} src={this.props.data.imageSrc} alt={this.props.data.imageAlt}/>
         </Paper></Col>
       <Col xs="2/3" sm="2/3" lg="2/3" style={style.paragraphContainer}>
-        <Well zDepth={1} style={style.textContainer}>
+        <Well style={style.textContainer}>
           {this.props.data.content}
         </Well>
       </Col>

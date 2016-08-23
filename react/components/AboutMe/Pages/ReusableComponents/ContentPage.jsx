@@ -12,8 +12,6 @@ import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import OneImageOneTextRow from './OneImageOneTextRow'
 import HeaderWithIconAndDivider from './HeaderWithIconAndDivider'
-var module = require('/Users/rowandempster/Documents/website-react/react/data/AboutMe/PageTwoData');
-var pageData = module.PageTwoData;
 
 var ContentPage = React.createClass({
   render: function(){
@@ -31,7 +29,7 @@ var ContentPage = React.createClass({
       var rowViewArray = [];
       console.log(rowDataArray);
       for(var i =0; i<rowDataArray.length; i++){
-        var viewToPush = <OneImageOneTextRow data={rowDataArray[i]}/>;
+        var viewToPush = <OneImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
         rowViewArray.push(viewToPush);
       }
       return (

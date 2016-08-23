@@ -1,0 +1,36 @@
+//PROJECT
+
+//---PROJECT LINKS
+var projectOneLinkArray = [{
+  href:
+  imageSrc:
+  width:
+  height:
+  key:
+},
+{
+  href:
+  imageSrc:
+  width:
+  height:
+  key:
+}];
+
+var projectOne = {
+  imgSrc:
+  imgHeight:
+  imgWidth:
+  title:
+  description:
+  linkDataArray:
+  videoUrl:
+  key:
+};
+
+var ProjectsData= {
+  headerText:
+  headerImageSrc:
+  projectsDataArray: [projectOne]
+};
+
+exports.data = ProjectsData;

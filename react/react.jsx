@@ -1,17 +1,20 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
+var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.hashHistory;
+
 import Home from './components/Home.jsx';
-import HeaderNav from './components/MyHeaderNav.jsx';
-import Projects from './components/Projects.jsx';
+import SideProjects from './components/Projects/DisplayedPages/SideProjects';
+import App from './components/App.jsx';
 
 
 ReactDOM.render(
-  (<Router>
-    <Route path="/" component={Home} />
-    <Route path="/test" component={HeaderNav} />
-    <Route path="/projects" component={Projects} />
+  (  <Router history={hashHistory}>
+    <Route path="/" component={Home}/>
+    <Route path="/side_projects" component={SideProjects}/>
   </Router>),
-  document.getElementById('app'));
+    document.getElementById('app'));

@@ -4,14 +4,14 @@ var projectsData = {
 		dropDownItems: [
 			{
 				item:"Side Projects",
-				link:"/projects",
+				link:"side_projects",
 				id:1.1,
 				route:true
 
 			},
 			{
 				item:"Work Projects",
-				link:"/projects",
+				link:"projects2",
 				id:1.2,
 				route:true
 
@@ -19,7 +19,7 @@ var projectsData = {
 			},
 			{
 				item:"Hackathon Projects",
-				link:"/projects",
+				link:"projects3",
 				id:1.3,
 				route:true
 

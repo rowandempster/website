@@ -5,11 +5,16 @@ import Divider from 'material-ui/Divider';
 
 
 var style = {
+  container :{
+    display: "flex",
+    flexDirection: "column"
+  },
   divider: {
-    marginTop:20,
+    marginTop:40,
     marginBottom:20,
   },
   row:{
+    "flex-wrap": "nowrap",
     marginBottom:-20,
     marginTop: 20
   },
@@ -27,7 +32,7 @@ var style = {
 var HeaderWithIconAndDivider = React.createClass({
   render: function(){
     return (
-      <div>
+      <div style={style.container}>
         <Row style={style.row}>
           <Col style={style.col} sm="1/15">
             <img style={style.image} src={this.props.imageSrc}/>
