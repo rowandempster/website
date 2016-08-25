@@ -7,9 +7,9 @@ import ButtonGroup from 'react-bootstrap/lib/ButtonGroup';
 var Scroll  = require('react-scroll');
 var scroll  = Scroll.animateScroll;
 var $ = require('jquery');
-import AboutMeView from './AboutMeView'
-import PageOne from './Pages/PageOne'
-import ContentPage from './Pages/ReusableComponents/ContentPage'
+import AboutMeView from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/BaseComponents/AboutMeView.jsx';
+import PageOne from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/DisplayedComponents/PageOne.jsx';
+import ContentPage from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/BaseComponents/ContentPage.jsx';
 var data = require('/Users/rowandempster/Documents/website-react/react/data/AboutMe/ContentPagesData');
 
 //GLOBAL VARS

@@ -31,7 +31,7 @@ var PageOne = React.createClass({
             This is the homepage of my website. Use the navigation bar at the top to explore the other sections.
           </p>
           <p>
-            Tap <img height={30} width={70} src="react/images/enter_key.png" alt="Enter Key"/> to continue. Hit <img height={40} width={40} src="react/images/up_key.png" alt="Up Arrow"/> at any time to return to the top
+            Tap <img height={30} width={70} src="http://www.clipartpal.com/_thumbs/pd/computer/computer/computer_key_Enter.png" alt="Enter Key"/> to continue. Hit <img height={40} width={40} src="http://www.clipartpal.com/_thumbs/pd/computer/computer/computer_key_Arrow_Up_5678.png" alt="Up Arrow"/> at any time to return to the top
           </p>
 
         </Jumbotron>

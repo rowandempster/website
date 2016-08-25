@@ -5,7 +5,7 @@ var Radium = require('radium');
 import ProjectCell from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectCell.jsx';
 var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/Pages/ReusableComponents/HeaderWithIconAndDivider.jsx'
+import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/BaseComponents/HeaderWithIconAndDivider.jsx'
 
 var style= {
 	pageHeader: {

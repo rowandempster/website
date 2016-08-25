@@ -7,9 +7,8 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 
-import Home from './components/Home.jsx';
+import Home from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/DisplayedComponents/Home.jsx';
 import SideProjects from './components/Projects/DisplayedPages/SideProjects';
-import App from './components/App.jsx';
 
 
 ReactDOM.render(
