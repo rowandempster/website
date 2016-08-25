@@ -5,17 +5,25 @@ var Radium = require('radium');
 import ProjectCell from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectCell.jsx';
 var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/BaseComponents/HeaderWithIconAndDivider.jsx'
+import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectPageHeader.jsx'
 
 var style= {
 	pageHeader: {
 		marginTop: 50,
 		marginBottom: 0
+	},
+	contentContainer: {
+		background: "red"
 	}
 };
 var Projects = React.createClass({
+	componentDidMount: function(){
+		document.body.style.backgroundColor = "#B0BEC5";
+	},
+	componentWillUnmount: function(){
+		document.body.style.backgroundColor = "white";
+	},
 	render: function(){
-		console.log(this.props.data);
     var projectsDataArray = this.props.data.projectsDataArray;
 		var projectsViewArray = [];
 		for (var i = 0; i<projectsDataArray.length; i++){
@@ -37,15 +45,18 @@ var Projects = React.createClass({
 			return (
 				<div>
 					<HeaderNav/>
-					<div style={style.pageHeader}>
-						<MuiThemeProvider>
-							<HeaderWithIconAndDivider
-								text={this.props.data.headerText}
-								imageSrc={this.props.data.headerImageSrc}/>
-						</MuiThemeProvider>
+					<div style={style.contentContainer}>
+						<div style={style.pageHeader}>
+							<MuiThemeProvider>
+								<HeaderWithIconAndDivider
+									largeText={this.props.data.headerTextArray[0]}
+									smallText={this.props.data.headerTextArray[1]}
+									imageSrc={this.props.data.headerImageSrc}/>
+							</MuiThemeProvider>
+						</div>
+						{projectsViewArray}
 					</div>
-					{projectsViewArray}
-				</div>
+					</div>
 			);
 		}
 	});

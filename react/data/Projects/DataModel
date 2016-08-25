@@ -21,6 +21,7 @@ var projectOne = {
   imgHeight:
   imgWidth:
   title:
+  date:
   description:
   linkDataArray:
   videoUrl:
@@ -28,7 +29,7 @@ var projectOne = {
 };
 
 var ProjectsData= {
-  headerText:
+  headerTextArray: ["LargeText", "SmallText"]
   headerImageSrc:
   projectsDataArray: [projectOne]
 };

@@ -21,6 +21,7 @@ var projectOne = {
   imgHeight: 150,
   imgWidth: 150,
   title: "test title",
+  date: "Fall 2016",
   description: "sadogifhasiodfhaihasdiofhsidofhisfdh",
   linkDataArray: projectOneLinkArray,
   videoUrl: "https://www.youtube.com/watch?v=n6pwkHjRWuM",
@@ -32,6 +33,7 @@ var projectTwo = {
   imgHeight: 150,
   imgWidth: 150,
   title: "test title",
+  date: "Fall 2016",
   description: "sadogifhasiodfhaihasdiofhsidofhisfdh",
   linkDataArray: projectOneLinkArray,
   videoUrl: "https://www.youtube.com/watch?v=n6pwkHjRWuM",
@@ -43,6 +45,7 @@ var projectThree = {
   imgHeight: 150,
   imgWidth: 150,
   title: "test title",
+  date: "Fall 2016",
   description: "sadogifhasiodfhaihasdiofhsidofhisfdh",
   linkDataArray: projectOneLinkArray,
   videoUrl: "https://www.youtube.com/watch?v=n6pwkHjRWuM",
@@ -51,7 +54,7 @@ var projectThree = {
 
 
 var ProjectsData= {
-  headerText: "Test Title",
+  headerTextArray: ["My Work","Side Projects"],
   headerImageSrc: "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png",
   projectsDataArray: [projectOne, projectTwo, projectThree]
 };

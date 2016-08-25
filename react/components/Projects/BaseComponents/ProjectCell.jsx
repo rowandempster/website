@@ -20,9 +20,8 @@ var screenWidth = screen.width;
 var rightStyle= {
   container:{
     width: screenWidth*(2/3),
-    marginBottom: 40,
+    marginBottom: 30,
     paddingTop:20,
-    paddingBottom:20,
     paddingRight: 50,
     paddingLeft:20,
     background: RIGHT_CONTAINER_COLOR,
@@ -53,15 +52,18 @@ var rightStyle= {
     textTransform: "none",
     fontSize: "large",
     fontWeight:"lighter"
+  },
+  date: {
+    marginLeft: "auto",
+    marginRight:20
   }
 };
 
 var leftStyle= {
   container:{
     width: screenWidth*(2/3),
-    marginBottom: 40,
+    marginBottom: 30,
     paddingTop:20,
-    paddingBottom:20,
     paddingRight: 20,
     paddingLeft:50,
     background: "#c2eafc",
@@ -85,13 +87,17 @@ var leftStyle= {
     margin:0,
   },
   titleRow:{
-    alignItems: "center",
+    alignItems: "center"
   },
   linkButtonLabel: {
     textTransform: "none",
     fontSize: "large",
     fontWeight:"lighter"
-  }
+  },
+  date: {
+    marginLeft: "auto",
+    marginRight:20
+  },
 };
 
 var ProjectCell = React.createClass({
@@ -115,6 +121,7 @@ var ProjectCell = React.createClass({
     var description = data.description;
     var linkDataArray = data.linkDataArray;
     var videoUrl = data.videoUrl;
+    var date = data.date;
     var style;
     if(this.props.fromLeft){
       style = leftStyle;
@@ -127,19 +134,22 @@ var ProjectCell = React.createClass({
       <Paper zDepth={5} rounded={false} style={style.container}>
         <Paper zDepth={1} rounded={true} style={style.headerContainer}>
           <Row style={style.titleRow}>
-            <div>
-              <img src={imgSrc} width={imgWidth} height={imgHeight}/>
-            </div>
-            <div style={style.col}>
-              <h1 style={style.noBootStrap}>{title}</h1>
-            </div>
-          </Row>
-        </Paper>
-        <Well style={style.desciptionContainer}>
-          <p style={style.noBootStrap}>{description}</p>
-        </Well>
-        <CollapsingLinkContainer linkDataArray={linkDataArray} videoUrl={videoUrl} fromLeft={this.props.fromLeft}/>
-        <br/>
+      <div>
+      <img src={imgSrc} width={imgWidth} height={imgHeight}/>
+      </div>
+      <div>
+      <h2 style={style.noBootStrap}>{title}</h2>
+      </div>
+      <div style={style.date}>
+      <h2 style={style.noBootStrap}>{date}</h2>
+      </div>
+      </Row>
+      </Paper>
+      <Well style={style.desciptionContainer}>
+      <p style={style.noBootStrap}>{description}</p>
+      </Well>
+      <CollapsingLinkContainer linkDataArray={linkDataArray} videoUrl={videoUrl} fromLeft={this.props.fromLeft}/>
+      <br/>
       </Paper>);
     }
   });

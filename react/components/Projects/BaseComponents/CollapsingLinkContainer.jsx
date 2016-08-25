@@ -14,7 +14,7 @@ var $ = require('jquery');
 
 injectTapEventPlugin();
 
-const ANIMATION_TIME = 1000;
+const ANIMATION_TIME = 500;
 const LEFT_CONTAINER_COLOR ="#c2eafc";
 const LEFT_INNER_COLOR ="#E1F5FE";
 const RIGHT_CONTAINER_COLOR ="#E0E0E0";
