@@ -39,10 +39,19 @@ var PageOneData = {
   header: pageOneHeader,
   rows: pageOneRowArray,
   key:1
-
+};
+var PageTwoData = {
+  header: pageOneHeader,
+  rows: pageOneRowArray,
+  key:2
+};
+var PageThreeData = {
+  header: pageOneHeader,
+  rows: pageOneRowArray,
+  key:3
 };
 
 
-var PageArray = [PageOneData]
+var PageArray = [PageOneData, PageTwoData, PageThreeData]
 
 exports.PageArray = PageArray;

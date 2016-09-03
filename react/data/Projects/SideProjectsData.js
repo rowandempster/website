@@ -56,7 +56,7 @@ var projectThree = {
 var ProjectsData= {
   headerTextArray: ["My Work","Side Projects"],
   headerImageSrc: "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png",
-  projectsDataArray: [projectOne, projectTwo, projectThree]
+  projectsDataArray: [projectOne]
 };
 
 exports.data = ProjectsData;

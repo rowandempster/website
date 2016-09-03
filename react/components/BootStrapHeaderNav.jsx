@@ -1,5 +1,4 @@
 import React from 'react';
-var Radium = require('radium');
 import Navbar from 'react-bootstrap/lib/Navbar';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import NavDropdown from 'react-bootstrap/lib/NavDropdown';
@@ -99,6 +98,5 @@ var HeaderNav = React.createClass({
 
 
 
-  HeaderNav = Radium(HeaderNav);
 
   export default HeaderNav;

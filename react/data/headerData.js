@@ -51,7 +51,7 @@ var headerArray = [projectsData, blogData, usefulLinks];
 var HeaderData = {
 	brand: "Rowan Dempster",
 	resume: "/Users/rowandempster/Documents/website-react/react/data/static/Resume.pdf",
-	contact: "",
+	contact: "contact_me",
 	array: headerArray
 }
 

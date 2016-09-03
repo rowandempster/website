@@ -27,7 +27,6 @@ var ContentPage = React.createClass({
     };
       var rowDataArray = this.props.data.rows;
       var rowViewArray = [];
-      console.log(rowDataArray);
       for(var i =0; i<rowDataArray.length; i++){
         var viewToPush = <OneImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
         rowViewArray.push(viewToPush);

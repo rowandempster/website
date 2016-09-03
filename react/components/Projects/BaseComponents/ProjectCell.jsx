@@ -134,22 +134,22 @@ var ProjectCell = React.createClass({
       <Paper zDepth={5} rounded={false} style={style.container}>
         <Paper zDepth={1} rounded={true} style={style.headerContainer}>
           <Row style={style.titleRow}>
-      <div>
-      <img src={imgSrc} width={imgWidth} height={imgHeight}/>
-      </div>
-      <div>
-      <h2 style={style.noBootStrap}>{title}</h2>
-      </div>
-      <div style={style.date}>
-      <h2 style={style.noBootStrap}>{date}</h2>
-      </div>
-      </Row>
-      </Paper>
-      <Well style={style.desciptionContainer}>
-      <p style={style.noBootStrap}>{description}</p>
-      </Well>
-      <CollapsingLinkContainer linkDataArray={linkDataArray} videoUrl={videoUrl} fromLeft={this.props.fromLeft}/>
-      <br/>
+            <div>
+              <img src={imgSrc} width={imgWidth} height={imgHeight}/>
+            </div>
+            <div>
+              <h2 style={style.noBootStrap}>{title}</h2>
+            </div>
+            <div style={style.date}>
+              <h2 style={style.noBootStrap}>{date}</h2>
+            </div>
+          </Row>
+        </Paper>
+        <Well style={style.desciptionContainer}>
+          <p style={style.noBootStrap}>{description}</p>
+        </Well>
+        <CollapsingLinkContainer linkDataArray={linkDataArray} videoUrl={videoUrl} fromLeft={this.props.fromLeft}/>
+        <br/>
       </Paper>);
     }
   });

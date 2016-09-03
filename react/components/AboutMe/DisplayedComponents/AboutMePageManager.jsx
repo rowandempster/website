@@ -19,7 +19,6 @@ var pageDataArray = data.PageArray;
 var pageViewArray = [];
 var pageOne = <PageOne height={viewPortHeight}/>;
 pageViewArray.push(pageOne);
-console.log(pageDataArray);
 for (var i = 0; i<pageDataArray.length; i++){
   var viewToPush =
   <ContentPage
