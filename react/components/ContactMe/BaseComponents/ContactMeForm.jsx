@@ -71,7 +71,7 @@ var ContactMeForm = React.createClass({
     var body ="<div><p>From Email: " + this.state.inputEmail + "</p><p>From Name: " + this.state.inputName + "</p><p>Message: " + this.state.inputMessage + "</p></div>";
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3000/sayHello',
+      url: 'http://52.205.175.117:3000/sayHello',
       data : { 'subject': subject,
       'body' : body
     },
