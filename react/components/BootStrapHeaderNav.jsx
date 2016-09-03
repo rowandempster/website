@@ -61,8 +61,8 @@ var HeaderNav = React.createClass({
         for(var j = 0; j<itemDataArray.length; j++){
           var itemViewToPush =
           <div style={styles.dropDownLinkContainer} key={itemDataArray[j].id}>
-          <DropDownItem style={styles.dropDownItem} item={itemDataArray[j].item} link={itemDataArray[j].link}
-          route={itemDataArray[j].route} key={itemDataArray[j].id} id={itemDataArray[j].id}/>
+            <DropDownItem style={styles.dropDownItem} item={itemDataArray[j].item} link={itemDataArray[j].link}
+              route={itemDataArray[j].route} key={itemDataArray[j].id} id={itemDataArray[j].id}/>
           </div>;
           // var itemViewToPush = <p>hello</p>;
           itemViewArray.push(itemViewToPush);
@@ -75,7 +75,6 @@ var HeaderNav = React.createClass({
       dropDownViewArray.push(dropDownViewToPush);
     }
 
-    console.log(headerData.resume);
 
     return (<Navbar fixedTop={true} fluid={true}>
       <Navbar.Brand>

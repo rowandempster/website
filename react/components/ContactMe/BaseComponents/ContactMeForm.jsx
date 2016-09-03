@@ -17,7 +17,12 @@ var style= {
   submitButtom:{
     marginTop: 30,
     width:150
-  }
+  },
+  hidden:{
+    display: "none",
+    color: "transparent",
+    backgroundColor: "transparent"
+  },
 };
 
 
@@ -29,7 +34,10 @@ var ContactMeForm = React.createClass({
       inputName: "",
       inputEmail:"",
       inputSubject: "",
-      inputMessage: ""
+      inputMessage: "",
+      nameStyle: style.hidden,
+      emailStyle: style.hidden,
+      messageStyle: style.hidden
     };
   },
   handleNameInput: function(event){
@@ -53,8 +61,6 @@ var ContactMeForm = React.createClass({
     });
   },
   showSnackbar: function(message){
-    console.log("showSnackbar with message = " + message);
-
     this.setState({
       snackbarOpen: true,
       emailStatus: message
@@ -66,33 +72,72 @@ var ContactMeForm = React.createClass({
     });
   },
   testEmail: function(){
-    var self = this;
-    var subject = this.state.inputSubject;
-    var body ="<div><p>From Email: " + this.state.inputEmail + "</p><p>From Name: " + this.state.inputName + "</p><p>Message: " + this.state.inputMessage + "</p></div>";
-    $.ajax({
-      type: 'POST',
-      url: 'http://52.205.175.117:3000/sayHello',
-      data : { 'subject': subject,
-      'body' : body
-    },
-    success: function(data) {
-      self.showSnackbar("Message Sent");
-    }, error: function (XMLHttpRequest, textStatus, errorThrown) {
-      this.showSnackbar("Message Failed To Send");
+    if(this.checkValidInput()){
+      this.clearFields();
+      var self = this;
+      var subject = this.state.inputSubject;
+      var body ="<div><p>From Email: " + this.state.inputEmail + "</p><p>From Name: " + this.state.inputName + "</p><p>Message: " + this.state.inputMessage + "</p></div>";
+      $.ajax({
+        type: 'POST',
+        url: 'http://52.205.175.117:3000/sayHello',
+        data : { 'subject': subject,
+        'body' : body
+      },
+      success: function(data) {
+        self.showSnackbar("Message Sent");
+      }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+        self.showSnackbar("Message Failed To Send");
+      }
+    });
+  }
+  else{
+    this.showSnackbar("Please Complete Required Fields");
+  }
+},
+checkValidInput: function(){
+  var isNameGood = (this.state.inputName).length > 0;
+  var isEmailGood = (this.state.inputEmail).length > 0;
+  var isMessageGood = (this.state.inputMessage).length > 0;
 
-    }
+  this.setState({
+    nameStyle: isNameGood ? style.hidden: "",
+    emailStyle: isEmailGood ? style.hidden: "",
+    messageStyle: isMessageGood ? style.hidden: ""
+  });
+  return isNameGood && isEmailGood && isMessageGood;
+},
+clearFields: function(){
+  this.setState({
+    snackbarOpen: false,
+    emailStatus: "",
+    inputName: "",
+    inputEmail:"",
+    inputSubject: "",
+    inputMessage: "",
+    nameStyle: style.hidden,
+    emailStyle: style.hidden,
+    messageStyle: style.hidden
   });
 },
 render: function(){
   return(
     <div style={style.container}>
-    <TextField hintText="Your Name" value={this.state.inputName} onChange={this.handleNameInput}/>
+    <TextField hintText="Your Name"
+    errorText="Your name is required!"
+    errorStyle={this.state.nameStyle}
+    value={this.state.inputName} onChange={this.handleNameInput}/>
     <br/>
-    <TextField hintText="Your Email" value={this.state.inputEmail} onChange={this.handleEmailInput}/>
+    <TextField hintText="Your Email"
+    errorText="Your email is required!"
+    errorStyle={this.state.emailStyle}
+    value={this.state.inputEmail} onChange={this.handleEmailInput}/>
     <br/>
     <TextField hintText="Subject" value={this.state.inputSubject} onChange={this.handleSubjectInput}/>
     <br/>
-    <TextField hintText="Message" multiLine={true}
+    <TextField hintText="Message"
+    errorText="A message is required!"
+    errorStyle={this.state.messageStyle}
+    multiLine={true}
     style={style.message} value={this.state.inputMessage} onChange={this.handleMessageInput}/>
     <br/>
     <RaisedButton label="Send" primary={true} style={style.submitButtom}
