@@ -116,6 +116,7 @@ var style= {
         };
         var viewToPush =
         <RaisedButton
+          target="_blank"
           key={linkDataArray[i].key}
           href={linkDataArray[i].href}
           icon={<img style={linkStyle}
@@ -166,7 +167,7 @@ var style= {
             <Collapsible style={style.linkPanel}
               open={this.state.linksAreOpen}
               transitionTime={ANIMATION_TIME}
-              easing="ease-in-out">
+              easing="linear">
               <div style={style.noMarginOrPadding}>
                 <Panel style={style.noMarginOrPadding}>
                   {linkViewArray}
@@ -176,7 +177,7 @@ var style= {
             <Collapsible style={style.linkPanel}
               open={this.state.videoIsOpen}
               transitionTime={ANIMATION_TIME}
-              easing="ease-in-out">
+              easing="linear">
               <ReactPlayer url={videoUrl} />
         </Collapsible>
         </div>

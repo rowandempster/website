@@ -56,6 +56,14 @@ var rightStyle= {
   date: {
     marginLeft: "auto",
     marginRight:20
+  },
+  title: {
+    width: "50%",
+    margin: "0 auto",
+    textAlign: "center"
+  },
+  image: {
+    marginLeft: 20
   }
 };
 
@@ -98,6 +106,14 @@ var leftStyle= {
     marginLeft: "auto",
     marginRight:20
   },
+  title: {
+    width: "50%",
+    margin: "0 auto",
+    textAlign: "center"
+  },
+  image: {
+    marginLeft: 20
+  }
 };
 
 var ProjectCell = React.createClass({
@@ -134,10 +150,10 @@ var ProjectCell = React.createClass({
       <Paper zDepth={5} rounded={false} style={style.container}>
         <Paper zDepth={1} rounded={true} style={style.headerContainer}>
           <Row style={style.titleRow}>
-            <div>
+            <div style={style.image}>
               <img src={imgSrc} width={imgWidth} height={imgHeight}/>
             </div>
-            <div>
+            <div style={style.title}>
               <h2 style={style.noBootStrap}>{title}</h2>
             </div>
             <div style={style.date}>
@@ -146,7 +162,7 @@ var ProjectCell = React.createClass({
           </Row>
         </Paper>
         <Well style={style.desciptionContainer}>
-          <p style={style.noBootStrap}>{description}</p>
+          <div style={style.noBootStrap}>{description}</div>
         </Well>
         <CollapsingLinkContainer linkDataArray={linkDataArray} videoUrl={videoUrl} fromLeft={this.props.fromLeft}/>
         <br/>
