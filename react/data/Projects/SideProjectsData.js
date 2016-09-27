@@ -5,7 +5,7 @@ var React = require('react');
 //---LINKS
 var projectOneLinkArray = [{
   href:"http://52.207.75.185",
-  imageSrc: "/Users/rowandempster/Documents/website-react/react/images/gotowebapp.png",
+  imageSrc: "react/images/gotowebapp.png",
   width: 150,
   height: 150,
   key:1
@@ -18,15 +18,15 @@ var projectOneLinkArray = [{
   key: 2
 },
 {
-  href:"/Users/rowandempster/Documents/website-react/react/images/colormyworldcollage.png",
-  imageSrc: "/Users/rowandempster/Documents/website-react/react/images/gotocollage.png",
+  href:"react/images/colormyworldcollage.png",
+  imageSrc: "react/images/gotocollage.png",
   width: 150,
   height: 150,
   key: 3
 }];
 
 var projectOne = {
-  imgSrc: "/Users/rowandempster/Documents/website-react/react/images/colormyworld.svg",
+  imgSrc: "react/images/colormyworld.svg",
   imgHeight: 50,
   imgWidth: 200,
   title: "Colour My World",

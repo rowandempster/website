@@ -16,7 +16,7 @@ var pageOneRowOneContent =
 </div>
 
 var pageOneRowOne = {
-    imageSrc: "http://cemc.uwaterloo.ca/!images/donors/UniversityOfWaterloo_logo_horiz_rgb.png",
+    imageSrc: "https://www.student.cs.uwaterloo.ca/~cs200/csbanner.png",
     imageAlt: "Waterloo",
     content: pageOneRowOneContent,
     key:1
@@ -52,6 +52,6 @@ var PageThreeData = {
 };
 
 
-var PageArray = [PageOneData, PageTwoData, PageThreeData]
+var PageArray = [PageOneData, PageTwoData]
 
 exports.PageArray = PageArray;
