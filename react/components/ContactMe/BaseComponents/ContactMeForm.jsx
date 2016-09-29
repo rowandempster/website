@@ -122,25 +122,25 @@ clearFields: function(){
 render: function(){
   return(
     <div style={style.container}>
-    <TextField hintText="Your Name"
-    errorText="Your name is required!"
-    errorStyle={this.state.nameStyle}
-    value={this.state.inputName} onChange={this.handleNameInput}/>
-    <br/>
-    <TextField hintText="Your Email"
-    errorText="Your email is required!"
-    errorStyle={this.state.emailStyle}
-    value={this.state.inputEmail} onChange={this.handleEmailInput}/>
-    <br/>
-    <TextField hintText="Subject" value={this.state.inputSubject} onChange={this.handleSubjectInput}/>
-    <br/>
-    <TextField hintText="Message"
-    errorText="A message is required!"
-    errorStyle={this.state.messageStyle}
-    multiLine={true}
-    style={style.message} value={this.state.inputMessage} onChange={this.handleMessageInput}/>
-    <br/>
-    <RaisedButton label="Send" primary={true} style={style.submitButtom}
+      <TextField hintText="Your Name"
+        errorText="Your name is required!"
+        errorStyle={this.state.nameStyle}
+        value={this.state.inputName} onChange={this.handleNameInput}/>
+      <br/>
+      <TextField hintText="Your Email"
+        errorText="Your email is required!"
+        errorStyle={this.state.emailStyle}
+        value={this.state.inputEmail} onChange={this.handleEmailInput}/>
+      <br/>
+      <TextField hintText="Subject" value={this.state.inputSubject} onChange={this.handleSubjectInput}/>
+      <br/>
+      <TextField hintText="Message"
+        errorText="A message is required!"
+        errorStyle={this.state.messageStyle}
+        multiLine={true}
+        style={style.message} value={this.state.inputMessage} onChange={this.handleMessageInput}/>
+      <br/>
+      <RaisedButton label="Send" primary={true} style={style.submitButtom}
     onTouchTap={this.testEmail}/>
     <Snackbar
     open={this.state.snackbarOpen}

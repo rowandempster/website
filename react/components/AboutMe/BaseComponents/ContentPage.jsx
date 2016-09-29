@@ -1,15 +1,5 @@
 import React from 'react';
-var Radium = require('radium');
-import Jumbotron from 'react-bootstrap/lib/Jumbotron';
-import PageHeader from 'react-bootstrap/lib/PageHeader';
-import Well from 'react-bootstrap/lib/Well';
-import { Row, Col, Grid } from 'elemental'
 var ReactDOM = require('react-dom');
-var Scroll  = require('react-scroll');
-var scroll  = Scroll.animateScroll;
-var $ = require('jquery');
-import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
 import OneImageOneTextRow from './OneImageOneTextRow'
 import HeaderWithIconAndDivider from './HeaderWithIconAndDivider'
 

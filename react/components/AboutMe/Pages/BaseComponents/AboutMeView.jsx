@@ -1,8 +1,5 @@
 import React from 'react';
-var Radium = require('radium');
 var ReactDOM = require('react-dom');
-var Scroll  = require('react-scroll');
-var scroll  = Scroll.animateScroll;
 var $ = require('jquery');
 import PageOne from './Pages/PageOne'
 

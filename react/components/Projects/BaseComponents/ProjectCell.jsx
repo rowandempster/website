@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'elemental'
-import ReactPlayer from 'react-player';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import Well from 'react-bootstrap/lib/Well';

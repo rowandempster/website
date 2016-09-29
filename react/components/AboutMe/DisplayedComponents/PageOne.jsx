@@ -1,11 +1,6 @@
 import React from 'react';
-var Radium = require('radium');
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
-import Button from 'react-bootstrap/lib/Button';
 var ReactDOM = require('react-dom');
-var Scroll  = require('react-scroll');
-var scroll  = Scroll.animateScroll;
-var $ = require('jquery');
 
 var PageOne = React.createClass({
   render: function(){

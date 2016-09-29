@@ -1,9 +1,7 @@
 import React from 'react';
 import HeaderNav from '/Users/rowandempster/Documents/website-react/react/components/BootStrapHeaderNav.jsx';
 var ReactDOM = require('react-dom');
-var Radium = require('radium');
 import ProjectCell from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectCell.jsx';
-var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import HeaderWithIconAndDivider from '/Users/rowandempster/Documents/website-react/react/components/Projects/BaseComponents/ProjectPageHeader.jsx'
 

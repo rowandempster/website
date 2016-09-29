@@ -2,9 +2,7 @@ import React from 'react';
 import HomePager from './HomePager';
 import HeaderNav from './BootStrapHeaderNav';
 var ReactDOM = require('react-dom');
-var Radium = require('radium');
 import ProjectCell from './Projects/ProjectCell'
-var $ = require('jquery');
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 var myModule = require('../data/ProjectsData');
 import HeaderWithIconAndDivider from './AboutMe/Pages/ReusableComponents/HeaderWithIconAndDivider'

@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import NavDropdown from 'react-bootstrap/lib/NavDropdown';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
 import Nav from 'react-bootstrap/lib/Nav';
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
@@ -69,8 +68,8 @@ var HeaderNav = React.createClass({
         }
       }
       var dropDownViewToPush = <NavDropdown eventKey={dropDownDataArray[i].id}
-      key={dropDownDataArray[i].id} id={dropDownDataArray[i].id} title={dropDownDataArray[i].buttonTitle}>
-      {itemViewArray}
+        key={dropDownDataArray[i].id} id={dropDownDataArray[i].id} title={dropDownDataArray[i].buttonTitle}>
+        {itemViewArray}
       </NavDropdown>
       dropDownViewArray.push(dropDownViewToPush);
     }
@@ -78,16 +77,16 @@ var HeaderNav = React.createClass({
 
     return (<Navbar fixedTop={true} fluid={true}>
       <Navbar.Brand>
-      <Link to={'/'}>{headerData.brand}</Link>
+        <Link to={'/'}>{headerData.brand}</Link>
       </Navbar.Brand>
       <Navbar.Collapse>
-      <Nav>
-      {dropDownViewArray}
-      </Nav>
-      <Nav pullRight>
-      <NavItem>
-      <DropDownItem style={styles.rightSideItem} route={true} item={"Contact Me"} link={headerData.contact}/>
-      </NavItem>
+        <Nav>
+          {dropDownViewArray}
+        </Nav>
+        <Nav pullRight>
+          <NavItem>
+            <DropDownItem style={styles.rightSideItem} route={true} item={"Contact Me"} link={headerData.contact}/>
+          </NavItem>
       <NavItem eventKey={1} href={headerData.resume} target="_blank">Resume</NavItem>
       </Nav>
       </Navbar.Collapse>
