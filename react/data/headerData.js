@@ -15,22 +15,14 @@ var projectsData = {
 var blogData = {
 		buttonTitle: "Tech Blog",
 		id:2,
-	// 	dropDownItems: [
-	// 		{
-	// 			item:"AWS Code Deploy",
-	// 			link:"/",
-	// 			id:2.1,
-	// 			route:true
-	// 		},
-	// 		{
-	// 			item:"Caffe Deep Learning Framework",
-	// 			link:"http://www.google.com",
-	// 			id:2.2,
-	// 			route:false
-	//
-	// 		}
-	// ]
-	dropDownItems: null
+		dropDownItems: [
+			{
+				item:"Caffe Deep Learning Framework",
+				link:"https://rowanstechblog.wordpress.com/2016/10/07/configuring-an-aws-web-app-with-caffe/",
+				id:2.1,
+				route:false
+			}
+	]
 };
 
 var usefulLinks = {

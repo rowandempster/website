@@ -1,7 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'elemental'
-import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
 import PageHeader from 'react-bootstrap/lib/PageHeader';
 
 var style = {
