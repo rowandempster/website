@@ -8,25 +8,41 @@ import React from 'react';
 var pageOneRowOneContent =
 <div>
   <p>
-    I finished my first two terms of school and first co-op term at the University of Waterloo.
+    I finished my first two years of school and am searching for my third co-op placement at the University of Waterloo.
   </p>
   <p>
-    I am in the CS class of 2020
+    I am in the Computer Science class of 2020.
   </p>
 </div>
 
 var pageOneRowOne = {
-    imageSrc: "https://www.student.cs.uwaterloo.ca/~cs200/csbanner.png",
-    imageAlt: "Waterloo",
-    content: pageOneRowOneContent,
-    key:1
-  };
+  imageHeight: "150px",
+  imageWidth: "300px",
+  imageSrc: "https://www.student.cs.uwaterloo.ca/~cs200/csbanner.png",
+  imageAlt: "Waterloo",
+  content: pageOneRowOneContent,
+  key:1
+};
 
 //---------ROW TWO
+var pageOneRowTwoContent =
+<div>
+  <p>
+    I like to attend Hackathons, checkout my projects from <a href="https://github.com/rowandempster/colour-my-world">AngelHack</a>, <a href="https://github.com/rowandempster/MotivateMe">EngHack</a>, <a href="https://github.com/rowandempster/NeighborCater">Hack the North</a>, and the <a href="https://github.com/rowandempster/ada_fb_bot">HeForShe Equithon</a>
+  </p>
+</div>
 
- //---ROW ARRAY
+var pageOneRowTwo = {
+  imageHeight: "350px",
+  imageWidth: "200px",
+  imageSrc: "https://d30y9cdsu7xlg0.cloudfront.net/png/72566-200.png",
+  imageAlt: "Hacking",
+  content: pageOneRowTwoContent,
+  key:2
+};
+//---ROW ARRAY
 
-var pageOneRowArray = [pageOneRowOne];
+var pageOneRowArray = [pageOneRowOne, pageOneRowTwo];
 
 //---HEADER
 var pageOneHeader = {

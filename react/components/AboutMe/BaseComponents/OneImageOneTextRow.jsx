@@ -11,15 +11,15 @@ var style = {
   imagePage: {
     marginTop: 0,
     marginLeft:1,
+    display:"inline-block"
   },
   paragraphContainer:{
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    display: "flex"
   },
   row:{
     "flex-wrap": "nowrap",
-    marginTop:0,
-    marginBottom: -20,
   },
   textContainer: {
     fontSize:25,
@@ -27,9 +27,11 @@ var style = {
   },
   column: {
     "alignSelf":"center",
+    "align-text": "center"
   },
   outerWell:{
-    background: "#FBFBFB"
+    background: "#FBFBFB",
+    position: "relative"
   }
 };
 var OneImageOneTextRow = React.createClass({
@@ -44,7 +46,7 @@ var OneImageOneTextRow = React.createClass({
 
       <Col style={style.column} sm="1/3" xs="1/3" lg="1/3">
         <Paper style={style.imagePage} zDepth={1}>
-          <img style={style.image} src={this.props.data.imageSrc} alt={this.props.data.imageAlt}/>
+          <img height={this.props.data.imageHeight} width={this.props.data.imageWidth}  src={this.props.data.imageSrc} alt={this.props.data.imageAlt}/>
         </Paper></Col>
       <Col xs="2/3" sm="2/3" lg="2/3" style={style.paragraphContainer}>
         <Well style={style.textContainer}>

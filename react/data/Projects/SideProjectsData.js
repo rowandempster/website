@@ -27,7 +27,7 @@ var projectOneLinkArray = [{
 
 
 var projectTwoLinkArray = [{
-  href:"https://github.com/TheCurryMan/NeighborCater/tree/android-front-end-buyer",
+  href:"https://github.com/rowandempster/NeighborCater",
   imageSrc: "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png",
   width: 150,
   height: 150,
@@ -51,6 +51,14 @@ var projectThreeLinkArray = [{
 
 var projectFourLinkArray = [{
   href:"https://github.com/rowandempster/Poster-Reader",
+  imageSrc: "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png",
+  width: 150,
+  height: 150,
+  key:1
+}];
+
+var projectFiveLinkArray = [{
+  href:"https://github.com/rowandempster/NeighborCater",
   imageSrc: "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png",
   width: 150,
   height: 150,
@@ -104,7 +112,6 @@ var projectFour = {
   videoUrl: "https://www.youtube.com/watch?v=n6pwkHjRWuM",
   key: 4
 };
-
 
 var ProjectsData= {
   headerTextArray: ["My Work","Side Projects"],

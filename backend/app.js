@@ -33,7 +33,7 @@ function handleSayHello(req, res) {
     service: 'Gmail',
     auth: {
       user: 'rowanwebsite@gmail.com', // Your email id
-      pass: 'rowan1aidan2' // Your password
+      pass: '$rowanwebsite$' // Your password
     }
   });
 
