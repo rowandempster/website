@@ -1,6 +1,7 @@
 import React from 'react';
 var ReactDOM = require('react-dom');
 import OneImageOneTextRow from './OneImageOneTextRow'
+import NoImageOneTextRow from './NoImageOneTextRow'
 import HeaderWithIconAndDivider from './HeaderWithIconAndDivider'
 
 var ContentPage = React.createClass({
@@ -19,6 +20,9 @@ var ContentPage = React.createClass({
       var rowViewArray = [];
       for(var i =0; i<rowDataArray.length; i++){
         var viewToPush = <OneImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
+        if(!rowDataArray[i].image){
+          viewToPush = <NoImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
+        }
         rowViewArray.push(viewToPush);
       }
       return (

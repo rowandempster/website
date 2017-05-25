@@ -42,7 +42,7 @@ var headerArray = [projectsData, blogData, usefulLinks];
 
 var HeaderData = {
 	brand: "Rowan Dempster",
-	resume: "/Users/rowandempster/Documents/website-react/react/data/static/Resume.pdf",
+	resume: "https://resume.creddle.io/resume/3p3wcv15py3",
 	contact: "contact_me",
 	array: headerArray
 }

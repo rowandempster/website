@@ -45,12 +45,9 @@ var OneImageOneTextRow = React.createClass({
     //   paragraphViewArray.push(paragraphToPush);
     // }
     return (<Well style={style.outerWell}><Row style={style.row}>
+      
 
-      <Col style={style.column} sm="1/3" xs="1/3" lg="1/3">
-        <Paper style={style.imagePage} zDepth={1}>
-          <img height={this.props.data.imageHeight} width={this.props.data.imageWidth}  src={this.props.data.imageSrc} alt={this.props.data.imageAlt}/>
-        </Paper></Col>
-      <Col xs="2/3" sm="2/3" lg="2/3" style={style.paragraphContainer}>
+      <Col xs="3/3" sm="3/3" lg="3/3" style={style.paragraphContainer}>
         <Well style={style.textContainer}>
           {this.props.data.content}
         </Well>
