@@ -17,15 +17,18 @@ var style = {
   },
   paragraphContainer:{
     alignItems: "center",
-    justifyContent: "center",
-    display: "flex"
+    display: "flex",
+    width: "100%"
   },
   row:{
     "flex-wrap": "nowrap",
+    width: "100%"
   },
   textContainer: {
     fontSize:25,
     background: "#F7F7F7",
+    width:"100%",
+    marginBottom:0
   },
   column: {
     "alignSelf":"center",
@@ -33,7 +36,8 @@ var style = {
   },
   outerWell:{
     background: "#FBFBFB",
-    position: "relative"
+    position: "relative",
+    width: "100%"
   }
 };
 var OneImageOneTextRow = React.createClass({
@@ -45,8 +49,6 @@ var OneImageOneTextRow = React.createClass({
     //   paragraphViewArray.push(paragraphToPush);
     // }
     return (<Well style={style.outerWell}><Row style={style.row}>
-      
-
       <Col xs="3/3" sm="3/3" lg="3/3" style={style.paragraphContainer}>
         <Well style={style.textContainer}>
           {this.props.data.content}

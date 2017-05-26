@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 import OneImageOneTextRow from './OneImageOneTextRow'
 import NoImageOneTextRow from './NoImageOneTextRow'
 import HeaderWithIconAndDivider from './HeaderWithIconAndDivider'
+import TwoTextRow from './TwoTextRow'
 
 var ContentPage = React.createClass({
   render: function(){
@@ -16,24 +17,27 @@ var ContentPage = React.createClass({
         overflowX:"hidden"
       },
     };
-      var rowDataArray = this.props.data.rows;
-      var rowViewArray = [];
-      for(var i =0; i<rowDataArray.length; i++){
-        var viewToPush = <OneImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
-        if(!rowDataArray[i].image){
-          viewToPush = <NoImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
-        }
-        rowViewArray.push(viewToPush);
+    var rowDataArray = this.props.data.rows;
+    var rowViewArray = [];
+    for(var i =0; i<rowDataArray.length; i++){
+      var viewToPush = <OneImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
+      if(!rowDataArray[i].image){
+        viewToPush = <NoImageOneTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
       }
-      return (
-        <div style={style.container}>
-          <HeaderWithIconAndDivider
-            imageSrc={this.props.data.header.imageSrc}
-            text={this.props.data.header.text}/>
+      if(rowDataArray[i].twoRows){
+        viewToPush = <TwoTextRow data={rowDataArray[i]} key={rowDataArray[i].key}/>;
+      }
+      rowViewArray.push(viewToPush);
+    }
+    return (
+      <div style={style.container}>
+        <HeaderWithIconAndDivider
+          imageSrc={this.props.data.header.imageSrc}
+          text={this.props.data.header.text}/>
           {rowViewArray}
         </div>
       );
-  }
-});
+    }
+  });
 
-export default ContentPage;
+  export default ContentPage;

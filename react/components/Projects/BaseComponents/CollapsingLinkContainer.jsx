@@ -78,8 +78,8 @@ var style= {
     },
     componentDidUpdate: function(newProps, newState){
       if(this.state.videoIsOpen || this.state.linksAreOpen){
-      setTimeout(this.checkContentVisibilityAndScrollIfNeeded, ANIMATION_TIME);
-    }
+        setTimeout(this.checkContentVisibilityAndScrollIfNeeded, ANIMATION_TIME);
+      }
     },
     toggleLinks: function(){
       this.setState({
@@ -111,6 +111,7 @@ var style= {
         var linkStyle = {
           height: linkDataArray[i].height,
           width: linkDataArray[i].width,
+          "line-height": 0
         };
         var viewToPush =
         <RaisedButton
@@ -121,27 +122,37 @@ var style= {
             src={linkDataArray[i].imageSrc}/>}
           style={linkStyle}
         />;
-        linkViewArray.push(viewToPush);
-      }
-      var linkButtonText;
-      if(this.state.linksAreOpen){
-        linkButtonText = "Close Links";
-      }
-      else{
-        linkButtonText = "Show Links";
-      }
-      var videoButtonText;
-      if(this.state.videoIsOpen){
-        videoButtonText = "Close Video";
-      }
-      else{
-        videoButtonText = "Open Video";
-      }
-      var videoUrl = this.props.videoUrl;
-      return(
-        <div style={style.linkContainer}>
-          <Row style={style.linkButtonRow}>
-            <Col xs="1/2">
+        if(linkDataArray[i].label != null){
+          viewToPush =
+          <RaisedButton
+            target="_blank"
+            key={linkDataArray[i].key}
+            href={linkDataArray[i].href}
+            label={linkDataArray[i].label}
+            buttonStyle={linkStyle}
+          />;
+        }
+          linkViewArray.push(viewToPush);
+        }
+        var linkButtonText;
+        if(this.state.linksAreOpen){
+          linkButtonText = "Close Links";
+        }
+        else{
+          linkButtonText = "Show Links";
+        }
+        var videoButtonText;
+        if(this.state.videoIsOpen){
+          videoButtonText = "Close Video";
+        }
+        else{
+          videoButtonText = "Open Video";
+        }
+        var videoUrl = this.props.videoUrl;
+        return(
+          <div style={style.linkContainer}>
+            <Row style={style.linkButtonRow}>
+              <Col xs="1/2">
               <RaisedButton
                 disabled={false}
                 onTouchTap={this.toggleLinks}
@@ -152,13 +163,13 @@ var style= {
               />
             </Col>
             <Col xs="1/2">
-              <RaisedButton
-                labelStyle={style.linkButtonLabel}
-                label={videoButtonText}
-                disabled={videoUrl == null}
-                backgroundColor={themeInnerColor}
-                style={style.linksButton}
-                onTouchTap={this.toggleVideo}/>
+            <RaisedButton
+              labelStyle={style.linkButtonLabel}
+              label={videoButtonText}
+              disabled={videoUrl == null}
+              backgroundColor={themeInnerColor}
+              style={style.linksButton}
+              onTouchTap={this.toggleVideo}/>
             </Col>
           </Row>
           <div style={style.contentContainer} ref="contentContainer" id="contentContainer">
@@ -177,8 +188,8 @@ var style= {
               transitionTime={ANIMATION_TIME}
               easing="linear">
               <ReactPlayer url={videoUrl} />
-        </Collapsible>
-        </div>
+            </Collapsible>
+          </div>
         </div>)
       }
     });

@@ -9,6 +9,7 @@ var hashHistory = ReactRouter.hashHistory;
 
 import Home from '/Users/rowandempster/Documents/website-react/react/components/AboutMe/DisplayedComponents/Home.jsx';
 import SideProjects from './components/Projects/DisplayedPages/SideProjects';
+import Work from './components/Projects/DisplayedPages/Work';
 import ContactMePage from "/Users/rowandempster/Documents/website-react/react/components/ContactMe/DisplayedPages/ContactMePage.jsx";
 
 
@@ -17,5 +18,6 @@ ReactDOM.render(
     <Route path="/" component={Home}/>
     <Route path="/side_projects" component={SideProjects}/>
     <Route path="/contact_me" component={ContactMePage}/>
+    <Route path="/employment" component={Work}/>
   </Router>),
     document.getElementById('app'));

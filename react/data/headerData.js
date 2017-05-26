@@ -8,6 +8,13 @@ var projectsData = {
 				id:1.1,
 				route:true
 
+			},
+			{
+				item:"Employement",
+				link:"employment",
+				id:1.2,
+				route:true
+
 			}
 	]
 };

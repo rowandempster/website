@@ -17,7 +17,6 @@ var style = {
   },
   paragraphContainer:{
     alignItems: "center",
-    display: "flex"
   },
   row:{
     "flex-wrap": "nowrap",
@@ -47,13 +46,14 @@ var OneImageOneTextRow = React.createClass({
     // }
     return (<Well style={style.outerWell}><Row style={style.row}>
 
-      <Col style={style.column} sm="1/3" xs="1/3" lg="1/3">
-        <Paper style={style.imagePage} zDepth={1}>
-          <img height={this.props.data.imageHeight} width={this.props.data.imageWidth}  src={this.props.data.imageSrc} alt={this.props.data.imageAlt}/>
-        </Paper></Col>
-      <Col xs="2/3" sm="2/3" lg="2/3" style={style.paragraphContainer}>
+      <Col xs="1/2" sm="1/2" lg="1/2" style={style.paragraphContainer}>
         <Well style={style.textContainer}>
-          {this.props.data.content}
+          {this.props.data.contentOne}
+        </Well>
+      </Col>
+      <Col xs="1/2" sm="1/2" lg="1/2" style={style.paragraphContainer}>
+        <Well style={style.textContainer}>
+          {this.props.data.contentTwo}
         </Well>
       </Col>
     </Row>
