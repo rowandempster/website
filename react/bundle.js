@@ -53486,7 +53486,13 @@
 	  _react2.default.createElement(
 	    "p",
 	    null,
-	    "At Waterloo I like to play sports (intramurals like Soccer, Volleyball, Basketball, etc...), attend hackathons (see next page), and yes, do course work (mostly in the depressing DC cubicles)."
+	    "At Waterloo I like to play sports (intramurals like Soccer, Volleyball, Basketball, etc...), attend hackathons (see next page), and balance course work with side projects (see ",
+	    _react2.default.createElement(
+	      "a",
+	      { href: "http://rowandempster.com/#/side_projects" },
+	      "My Work"
+	    ),
+	    ")."
 	  )
 	);
 
