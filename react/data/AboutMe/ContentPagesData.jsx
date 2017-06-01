@@ -181,6 +181,6 @@ var PageThreeData = {
   key:3
 };
 
-var PageArray = [PageOneData, PageTwoData, PageThreeData]
+var PageArray = [PageOneData, PageTwoData]
 
 exports.PageArray = PageArray;
