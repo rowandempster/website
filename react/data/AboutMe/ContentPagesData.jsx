@@ -29,7 +29,7 @@ var pageOneRowOne = {
 var pageOneRowTwoContent =
 <div>
   <p>
-    At Waterloo I like to play sports (intramurals like Soccer, Volleyball, Basketball, etc...), attend hackathons (see next page), and yes, do course work (mostly in the depressing DC cubicles).
+    At Waterloo I like to play sports (intramurals like Soccer, Volleyball, Basketball, etc...), attend hackathons (see next page), and balance course work with side projects (see <a href="http://rowandempster.com/#/side_projects">My Work</a>).
   </p>
 </div>
 
