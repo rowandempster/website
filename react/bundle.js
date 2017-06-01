@@ -54,11 +54,11 @@
 
 	var _SideProjects2 = _interopRequireDefault(_SideProjects);
 
-	var _Work = __webpack_require__(752);
+	var _Work = __webpack_require__(734);
 
 	var _Work2 = _interopRequireDefault(_Work);
 
-	var _ContactMePage = __webpack_require__(734);
+	var _ContactMePage = __webpack_require__(736);
 
 	var _ContactMePage2 = _interopRequireDefault(_ContactMePage);
 
@@ -53703,7 +53703,7 @@
 	  key: 3
 	};
 
-	var PageArray = [PageOneData, PageTwoData, PageThreeData];
+	var PageArray = [PageOneData, PageTwoData];
 
 	exports.PageArray = PageArray;
 
@@ -67308,11 +67308,179 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TextField = __webpack_require__(735);
+	var _ProjectPage = __webpack_require__(685);
+
+	var _ProjectPage2 = _interopRequireDefault(_ProjectPage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var myModule = __webpack_require__(735);
+	var data = myModule.data;
+
+	var Work = _react2.default.createClass({
+	  displayName: 'Work',
+
+	  render: function render() {
+	    return _react2.default.createElement(_ProjectPage2.default, { data: data, key: 1 });
+	  }
+	});
+
+	exports.default = Work;
+
+/***/ },
+/* 735 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+
+	//PROJECT ONE
+
+	//---LINKS
+	var projectOneLinkArray = [{
+	  href: "https://www.kik.com/",
+	  label: "Company Website",
+	  width: 150,
+	  height: 150,
+	  key: 1
+	}];
+
+	var projectTwoLinkArray = [{
+	  href: "http://www.tribalscale.com/",
+	  label: "Company Website",
+	  width: 150,
+	  height: 150,
+	  key: 1
+	}];
+
+	var projectOne = {
+	  imgSrc: "https://avatars1.githubusercontent.com/u/1424728?v=3&s=200",
+	  imgHeight: 150,
+	  imgWidth: 150,
+	  title: "Kik Interactive",
+	  date: "Winter 2017",
+	  description: React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "p",
+	      null,
+	      "Developed the GIF favoriting feature, allowing users to send their favorite GIFs without having to search for them.",
+	      React.createElement(
+	        "ul",
+	        null,
+	        React.createElement(
+	          "li",
+	          null,
+	          "Implemented using a local cache and posting to the GIF content provider's favourites API."
+	        ),
+	        React.createElement(
+	          "li",
+	          null,
+	          "Optimized synchronization of the local cache with the API, minimizing the number of calls made to the content provider API."
+	        )
+	      ),
+	      "Added message timestamps to conversation history which users reveal by tapping on chat bubbles.",
+	      React.createElement(
+	        "ul",
+	        null,
+	        React.createElement(
+	          "li",
+	          null,
+	          "Implemented using the MVVM (Model-View-ViewModel) design pattern in conjunction with RxJava for Data Binding."
+	        ),
+	        React.createElement(
+	          "li",
+	          null,
+	          "Added high coverage unit tests at the ViewModel layer using the JUnit testing framework."
+	        )
+	      ),
+	      "Learned how to efficiently move a feature through multiple rounds of code review and QA. "
+	    )
+	  ),
+	  linkDataArray: projectOneLinkArray,
+	  videoUrl: "https://www.youtube.com/watch?v=4jq54zXk10g",
+	  key: 1
+	};
+
+	var projectTwo = {
+	  imgSrc: "https://s3-us-west-2.amazonaws.com/tribalscale-website-v2/metatagimage.png",
+	  imgHeight: 120,
+	  imgWidth: 150,
+	  title: "TribalScale",
+	  date: "Summer 2016",
+	  description: React.createElement(
+	    "div",
+	    null,
+	    React.createElement(
+	      "p",
+	      null,
+	      "Developed the podcast section of the ABC News Android App.",
+	      React.createElement(
+	        "ul",
+	        null,
+	        React.createElement(
+	          "li",
+	          null,
+	          "Gained experience with the OkHttp Android client, SQLite Android databases, and version control best practices. "
+	        ),
+	        React.createElement(
+	          "li",
+	          null,
+	          "Communicated daily with the client to confirm requirements. "
+	        )
+	      ),
+	      "Developed and deployed the beta Helpful.com Android App to the Play Store.",
+	      React.createElement(
+	        "ul",
+	        null,
+	        React.createElement(
+	          "li",
+	          null,
+	          "Integrated Auth0 allowing users to sign in with their Google accounts, and implemented a Retrofit/RxJava networking layer to optimize backend interfacing."
+	        ),
+	        React.createElement(
+	          "li",
+	          null,
+	          "Worked closely with design and QA staff to ship weekly builds to the client, allowing for quick iteration on features. "
+	        )
+	      ),
+	      " "
+	    )
+	  ),
+	  linkDataArray: projectTwoLinkArray,
+	  videoUrl: "https://vimeo.com/188891585",
+	  key: 2
+	};
+
+	var ProjectsData = {
+	  headerTextArray: ["My Work", "Employement"],
+	  headerImageSrc: "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png",
+	  projectsDataArray: [projectOne, projectTwo]
+	};
+
+	exports.data = ProjectsData;
+
+/***/ },
+/* 736 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _TextField = __webpack_require__(737);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _ContactMeForm = __webpack_require__(743);
+	var _ContactMeForm = __webpack_require__(745);
 
 	var _ContactMeForm2 = _interopRequireDefault(_ContactMeForm);
 
@@ -67357,7 +67525,7 @@
 	exports.default = ContactMePage;
 
 /***/ },
-/* 735 */
+/* 737 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67367,7 +67535,7 @@
 	});
 	exports.default = undefined;
 
-	var _TextField = __webpack_require__(736);
+	var _TextField = __webpack_require__(738);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -67376,7 +67544,7 @@
 	exports.default = _TextField2.default;
 
 /***/ },
-/* 736 */
+/* 738 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -67419,19 +67587,19 @@
 
 	var _deprecatedPropType2 = _interopRequireDefault(_deprecatedPropType);
 
-	var _EnhancedTextarea = __webpack_require__(737);
+	var _EnhancedTextarea = __webpack_require__(739);
 
 	var _EnhancedTextarea2 = _interopRequireDefault(_EnhancedTextarea);
 
-	var _TextFieldHint = __webpack_require__(740);
+	var _TextFieldHint = __webpack_require__(742);
 
 	var _TextFieldHint2 = _interopRequireDefault(_TextFieldHint);
 
-	var _TextFieldLabel = __webpack_require__(741);
+	var _TextFieldLabel = __webpack_require__(743);
 
 	var _TextFieldLabel2 = _interopRequireDefault(_TextFieldLabel);
 
-	var _TextFieldUnderline = __webpack_require__(742);
+	var _TextFieldUnderline = __webpack_require__(744);
 
 	var _TextFieldUnderline2 = _interopRequireDefault(_TextFieldUnderline);
 
@@ -67950,7 +68118,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 737 */
+/* 739 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -67971,7 +68139,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(738);
+	var _reactEventListener = __webpack_require__(740);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -68178,7 +68346,7 @@
 	exports.default = EnhancedTextarea;
 
 /***/ },
-/* 738 */
+/* 740 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68193,7 +68361,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _shallowEqual = __webpack_require__(739);
+	var _shallowEqual = __webpack_require__(741);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
@@ -68345,7 +68513,7 @@
 	exports.default = EventListener;
 
 /***/ },
-/* 739 */
+/* 741 */
 /***/ function(module, exports) {
 
 	/**
@@ -68416,7 +68584,7 @@
 	module.exports = shallowEqual;
 
 /***/ },
-/* 740 */
+/* 742 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68497,7 +68665,7 @@
 	exports.default = TextFieldHint;
 
 /***/ },
-/* 741 */
+/* 743 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68614,7 +68782,7 @@
 	exports.default = TextFieldLabel;
 
 /***/ },
-/* 742 */
+/* 744 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68750,7 +68918,7 @@
 	exports.default = TextFieldUnderline;
 
 /***/ },
-/* 743 */
+/* 745 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68763,7 +68931,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TextField = __webpack_require__(735);
+	var _TextField = __webpack_require__(737);
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
@@ -68771,7 +68939,7 @@
 
 	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
-	var _Snackbar = __webpack_require__(744);
+	var _Snackbar = __webpack_require__(746);
 
 	var _Snackbar2 = _interopRequireDefault(_Snackbar);
 
@@ -68930,7 +69098,7 @@
 	exports.default = ContactMeForm;
 
 /***/ },
-/* 744 */
+/* 746 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68940,7 +69108,7 @@
 	});
 	exports.default = undefined;
 
-	var _Snackbar = __webpack_require__(745);
+	var _Snackbar = __webpack_require__(747);
 
 	var _Snackbar2 = _interopRequireDefault(_Snackbar);
 
@@ -68949,7 +69117,7 @@
 	exports.default = _Snackbar2.default;
 
 /***/ },
-/* 745 */
+/* 747 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -68974,11 +69142,11 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _ClickAwayListener = __webpack_require__(746);
+	var _ClickAwayListener = __webpack_require__(748);
 
 	var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
 
-	var _SnackbarBody = __webpack_require__(747);
+	var _SnackbarBody = __webpack_require__(749);
 
 	var _SnackbarBody2 = _interopRequireDefault(_SnackbarBody);
 
@@ -69245,7 +69413,7 @@
 	exports.default = Snackbar;
 
 /***/ },
-/* 746 */
+/* 748 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69364,7 +69532,7 @@
 	exports.default = ClickAwayListener;
 
 /***/ },
-/* 747 */
+/* 749 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69388,11 +69556,11 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _withWidth = __webpack_require__(748);
+	var _withWidth = __webpack_require__(750);
 
 	var _withWidth2 = _interopRequireDefault(_withWidth);
 
-	var _FlatButton = __webpack_require__(749);
+	var _FlatButton = __webpack_require__(751);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -69526,7 +69694,7 @@
 	exports.default = (0, _withWidth2.default)()(SnackbarBody);
 
 /***/ },
-/* 748 */
+/* 750 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69546,7 +69714,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactEventListener = __webpack_require__(738);
+	var _reactEventListener = __webpack_require__(740);
 
 	var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -69651,7 +69819,7 @@
 	}
 
 /***/ },
-/* 749 */
+/* 751 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69661,7 +69829,7 @@
 	});
 	exports.default = undefined;
 
-	var _FlatButton = __webpack_require__(750);
+	var _FlatButton = __webpack_require__(752);
 
 	var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
@@ -69670,7 +69838,7 @@
 	exports.default = _FlatButton2.default;
 
 /***/ },
-/* 750 */
+/* 752 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -69703,7 +69871,7 @@
 
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-	var _FlatButtonLabel = __webpack_require__(751);
+	var _FlatButtonLabel = __webpack_require__(753);
 
 	var _FlatButtonLabel2 = _interopRequireDefault(_FlatButtonLabel);
 
@@ -69988,7 +70156,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 751 */
+/* 753 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70067,174 +70235,6 @@
 	  muiTheme: _react.PropTypes.object.isRequired
 	};
 	exports.default = FlatButtonLabel;
-
-/***/ },
-/* 752 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _ProjectPage = __webpack_require__(685);
-
-	var _ProjectPage2 = _interopRequireDefault(_ProjectPage);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var myModule = __webpack_require__(753);
-	var data = myModule.data;
-
-	var Work = _react2.default.createClass({
-	  displayName: 'Work',
-
-	  render: function render() {
-	    return _react2.default.createElement(_ProjectPage2.default, { data: data, key: 1 });
-	  }
-	});
-
-	exports.default = Work;
-
-/***/ },
-/* 753 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var React = __webpack_require__(2);
-
-	//PROJECT ONE
-
-	//---LINKS
-	var projectOneLinkArray = [{
-	  href: "https://www.kik.com/",
-	  label: "Company Website",
-	  width: 150,
-	  height: 150,
-	  key: 1
-	}];
-
-	var projectTwoLinkArray = [{
-	  href: "http://www.tribalscale.com/",
-	  label: "Company Website",
-	  width: 150,
-	  height: 150,
-	  key: 1
-	}];
-
-	var projectOne = {
-	  imgSrc: "https://avatars1.githubusercontent.com/u/1424728?v=3&s=200",
-	  imgHeight: 150,
-	  imgWidth: 150,
-	  title: "Kik Interactive",
-	  date: "Winter 2017",
-	  description: React.createElement(
-	    "div",
-	    null,
-	    React.createElement(
-	      "p",
-	      null,
-	      "Developed the GIF favoriting feature, allowing users to send their favorite GIFs without having to search for them.",
-	      React.createElement(
-	        "ul",
-	        null,
-	        React.createElement(
-	          "li",
-	          null,
-	          "Implemented using a local cache and posting to the GIF content provider's favourites API."
-	        ),
-	        React.createElement(
-	          "li",
-	          null,
-	          "Optimized synchronization of the local cache with the API, minimizing the number of calls made to the content provider API."
-	        )
-	      ),
-	      "Added message timestamps to conversation history which users reveal by tapping on chat bubbles.",
-	      React.createElement(
-	        "ul",
-	        null,
-	        React.createElement(
-	          "li",
-	          null,
-	          "Implemented using the MVVM (Model-View-ViewModel) design pattern in conjunction with RxJava for Data Binding."
-	        ),
-	        React.createElement(
-	          "li",
-	          null,
-	          "Added high coverage unit tests at the ViewModel layer using the JUnit testing framework."
-	        )
-	      ),
-	      "Learned how to efficiently move a feature through multiple rounds of code review and QA. "
-	    )
-	  ),
-	  linkDataArray: projectOneLinkArray,
-	  videoUrl: "https://www.youtube.com/watch?v=4jq54zXk10g",
-	  key: 1
-	};
-
-	var projectTwo = {
-	  imgSrc: "https://s3-us-west-2.amazonaws.com/tribalscale-website-v2/metatagimage.png",
-	  imgHeight: 120,
-	  imgWidth: 150,
-	  title: "TribalScale",
-	  date: "Summer 2016",
-	  description: React.createElement(
-	    "div",
-	    null,
-	    React.createElement(
-	      "p",
-	      null,
-	      "Developed the podcast section of the ABC News Android App.",
-	      React.createElement(
-	        "ul",
-	        null,
-	        React.createElement(
-	          "li",
-	          null,
-	          "Gained experience with the OkHttp Android client, SQLite Android databases, and version control best practices. "
-	        ),
-	        React.createElement(
-	          "li",
-	          null,
-	          "Communicated daily with the client to confirm requirements. "
-	        )
-	      ),
-	      "Developed and deployed the beta Helpful.com Android App to the Play Store.",
-	      React.createElement(
-	        "ul",
-	        null,
-	        React.createElement(
-	          "li",
-	          null,
-	          "Integrated Auth0 allowing users to sign in with their Google accounts, and implemented a Retrofit/RxJava networking layer to optimize backend interfacing."
-	        ),
-	        React.createElement(
-	          "li",
-	          null,
-	          "Worked closely with design and QA staff to ship weekly builds to the client, allowing for quick iteration on features. "
-	        )
-	      ),
-	      " "
-	    )
-	  ),
-	  linkDataArray: projectTwoLinkArray,
-	  videoUrl: "https://vimeo.com/188891585",
-	  key: 2
-	};
-
-	var ProjectsData = {
-	  headerTextArray: ["My Work", "Employement"],
-	  headerImageSrc: "http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png",
-	  projectsDataArray: [projectOne, projectTwo]
-	};
-
-	exports.data = ProjectsData;
 
 /***/ }
 /******/ ]);
