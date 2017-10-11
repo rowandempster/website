@@ -34371,7 +34371,7 @@
 
 	var HeaderData = {
 		brand: "Rowan Dempster",
-		resume: "https://resume.creddle.io/resume/3p3wcv15py3",
+		resume: "./react/images/Resume_C.pdf",
 		contact: "contact_me",
 		array: headerArray
 	};
@@ -53583,7 +53583,7 @@
 	  _react2.default.createElement(
 	    "p",
 	    null,
-	    "Hackathons are a great way for me to start working on a new side project. ",
+	    "Hackathons are a great way for me to start work on a new side project. ",
 	    _react2.default.createElement("br", null),
 	    "When I have a cool project idea, distractions usually hold me back from putting my head down and doing the overhead work necessary to get the project started. ",
 	    _react2.default.createElement("br", null),
