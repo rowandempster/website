@@ -53583,7 +53583,7 @@
 	  _react2.default.createElement(
 	    "p",
 	    null,
-	    "Hackathons are a great way for me to start work on a new side project. ",
+	    "Hackathons are a great way for me to start working on a new side project. ",
 	    _react2.default.createElement("br", null),
 	    "When I have a cool project idea, distractions usually hold me back from putting my head down and doing the overhead work necessary to get the project started. ",
 	    _react2.default.createElement("br", null),
